@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="موقع تعليمي متطور لتحميل الكتب الخارجية PDF - ENG/AMIN SAYED">
+  <meta name="keywords" content="كتب خارجية, PDF, تعليم, مصر, كتب مدرسية, مذكرات, ثانوية عامة, اعدادية, ابتدائية">
+  <meta name="author" content="ENG/AMIN SAYED">
+  <meta name="theme-color" content="#667eea">
+
+  <!-- Open Graph / Social Media Tags -->
+  <meta property="og:title" content="مكتبة الكتب التعليمية - ENG/AMIN SAYED">
+  <meta property="og:description" content="موقع تعليمي متطور لتحميل الكتب الخارجية PDF - ENG/AMIN SAYED">
+  <meta property="og:image" content="dist/images/logo.svg">
+  <meta property="og:url" content="https://aminsayed.github.io/books/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <title>مكتبة الكتب التعليمية - ENG/AMIN SAYED</title>
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23667eea' d='M21,4H3C2.4,4,2,4.4,2,5v14c0,0.6,0.4,1,1,1h18c0.6,0,1-0.4,1-1V5C22,4.4,21.6,4,21,4z M11,19H4V8h7V19z M20,19h-7V8h7 V19z M20,7H4V5h16V7z'%3E%3C/path%3E%3C/svg%3E"
+    type="image/svg+xml">
+
+  <!-- Preload critical fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Minified CSS -->
+  <link rel="stylesheet" href="dist/css/styles.min.css">
+  <link rel="stylesheet" href="dist/css/recent-books.min.css">
+  <link rel="stylesheet" href="dist/css/reviews.min.css">
+
+  <!-- Fonts and icons loaded asynchronously -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Amiri:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- شاشة التحميل -->
+  <div id="loader" class="loader">
+    <div class="loader-content">
+      <div class="spinner"></div>
+      <h3>جاري تحميل الموقع...</h3>
+    </div>
+  </div>
+
+  <!-- خلفية الجسيمات المتحركة - تحميل مؤجل -->
+  <div class="particles-container" id="particles-js"></div>
+
+  <!-- خلفية متحركة -->
+  <div class="animated-bg">
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- الهيدر -->
+    <header class="header">
+      <nav class="nav">
+        <div class="logo">
+          <img src="dist/images/logo.svg" alt="مكتبة الكتب التعليمية" width="50" height="50">
+          <h1>مكتبة الكتب التعليمية</h1>
+        </div>
+        <div class="nav-menu">
+          <a href="#" class="nav-link">الرئيسية</a>
+          <a href="#books" class="nav-link">الكتب</a>
+          <a href="#about" class="nav-link">من نحن</a>
+          <a href="#contact" class="nav-link">اتصل بنا</a>
+        </div>
+        <div class="search-container">
+          <div class="search-icon">
+            <img src="dist/images/search.svg" alt="بحث" width="20" height="20">
+          </div>
+          <div class="search-box">
+            <form class="search-form">
+              <input type="text" class="search-input" placeholder="ابحث عن كتاب...">
+              <button type="submit" class="search-btn">بحث</button>
+            </form>
+            <div class="search-results"></div>
+          </div>
+          <div class="theme-toggle">
+            <img src="dist/images/theme-icon.svg" alt="تغيير المظهر" width="20" height="20">
+          </div>
+        </div>
+        <button class="mobile-menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- القسم الرئيسي -->
+    <section class="hero">
+      <div class="hero-content">
+        <h2>مكتبة الكتب التعليمية</h2>
+        <p>نقدم لكم مجموعة متميزة من الكتب الخارجية PDF للمراحل التعليمية المختلفة (ابتدائي، إعدادي، ثانوي) بروابط تحميل
+          مباشرة
+          عبر تيليجرام.</p>
+        <div class="cta-buttons">
+          <a href="#books" class="btn primary-btn">تصفح الكتب</a>
+          <a href="#contact" class="btn secondary-btn">تواصل معنا</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="dist/images/education.svg" alt="كتب تعليمية" loading="lazy" width="400" height="300">
+      </div>
+    </section>
+
+    <!-- قسم الكتب المضافة حديثًا -->
+    <section class="section recently-added-section" id="recent-books">
+      <div class="section-title">
+        <h2>
+          <img src="dist/images/new-book.svg" alt="" class="section-icon" width="28" height="28">
+          أحدث الكتب
+          <span class="highlight-badge">جديد</span>
+        </h2>
+        <p>أحدث الإضافات لمكتبتنا التعليمية المتميزة</p>
+      </div>
+
+      <div class="recent-books-container">
+        <div class="books-carousel">
+          <!-- كتاب 1 -->
+          <div class="book-card">
+            <div class="book">
+              <div class="book-front">
+                <div class="book-content">
+                  <h3 class="book-title">الرياضيات للصف الثالث الثانوي</h3>
+                  <p class="book-author">د. محمد أحمد</p>
+                  <p class="book-description">كتاب شامل في الرياضيات للصف الثالث الثانوي يغطي المنهج كاملاً مع شرح مفصل
+                    وحلول نموذجية.</p>
+                  <div class="book-meta">
+                    <span class="book-pages">250 صفحة</span>
+                    <span class="book-date">15 مايو 2023</span>
+                  </div>
+                  <div class="book-rating">
+                    <img src="dist/images/star.svg" alt="" class="star-icon" width="14" height="14">
+                    <img src="dist/images/star.svg" alt="" class="star-icon" width="14" height="14">
+                    <img src="dist/images/star.svg" alt="" class="star-icon" width="14" height="14">
+                    <img src="dist/images/star.svg" alt="" class="star-icon" width="14" height="14">
+                    <img src="dist/images/star.svg" alt="" class="star-icon" width="14" height="14">
+                    <span class="book-rating-count">4.9</span>
+                  </div>
+                </div>
+              </div>
+              <div class="book-spine"></div>
+              <div class="book-back">
+                <div class="book-back-content">
+                  <h4 class="book-back-title">الرياضيات للصف الثالث الثانوي</h4>
+                  <div class="book-back-description">
+                    كتاب يغطي جميع فروع الرياضيات للثانوية العامة بأسلوب سهل وشامل مع تمارين محلولة وامتحانات سابقة
+                  </div>
+                  <div class="book-actions">
+                    <a href="https://t.me/to_explain1" class="book-download" target="_blank">
+                      <img src="dist/images/telegram.svg" alt="" class="download-icon" width="16" height="16">
+                      تحميل الكتاب
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="book-ribbon">جديد</div>
+          </div>
+
+          <!-- كتاب 2 -->
+          <div class="book-card">
+            <div class="book">
+              <div class="book-front">
+                <div class="book-content">
+                  <h3 class="book-title">الفيزياء للصف الثاني الثانوي</h3>
+                  <p class="book-author">أ. أحمد محمود</p>
+                  <p class="book-description">مذكرة متميزة في الفيزياء للصف الثاني الثانوي تحتوي على شرح مبسط وتدريبات
+                    متنوعة.</p>
+                  <div class="book-meta">
+                    <span class="book-pages">180 صفحة</span>
+                    <span class="book-date">10 أبريل 2023</span>
+                  </div>
+                  <div class="book-rating">
+                    <img src="dist/images/star.svg" alt="" class="star-icon" width="14" height="14">
+                    <img src="dist/images/star.svg" alt="" class="star-icon" width="14" height="14">
+                    <img src="dist/images/star.svg" alt="" class="star-icon" width="14" height="14">
+                    <img src="dist/images/star.svg" alt="" class="star-icon" width="14" height="14">
+                    <img src="dist/images/star.svg" alt="" class="star-icon" width="14" height="14">
+                    <span class="book-rating-count">4.7</span>
+                  </div>
+                </div>
+              </div>
+              <div class="book-spine"></div>
+              <div class="book-back">
+                <div class="book-back-content">
+                  <h4 class="book-back-title">الفيزياء للصف الثاني الثانوي</h4>
+                  <div class="book-back-description">
+                    مذكرة شاملة تغطي منهج الفيزياء بالكامل وتتضمن شرح مبسط للمعادلات والنظريات وتدريبات متنوعة وشاملة
+                  </div>
+                  <div class="book-actions">
+                    <a href="https://t.me/G5_Y5" class="book-download" target="_blank">
+                      <img src="dist/images/telegram.svg" alt="" class="download-icon" width="16" height="16">
+                      تحميل الكتاب
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- كتاب 3 -->
+          <div class="book-card">
+            <div class="book">
+              <div class="book-front">
+                <div class="book-content">
+                  <h3 class="book-title">اللغة الإنجليزية للصف الأول الثانوي</h3>
+                  <p class="book-author">أ. سارة خالد</p>
+                  <p class="book-description">كتاب اللغة الإنجليزية للصف الأول الثانوي يشمل شرح القواعد وتدريبات على
+                    القراءة والكتابة.</p>
+                  <div class="book-meta">
+                    <span class="book-pages">150 صفحة</span>
+                    <span class="book-date">22 مارس 2023</span>
+                  </div>
+                  <div class="book-rating">
+                    <img src="dist/images/star.svg" alt="" class="star-icon" width="14" height="14">
+                    <img src="dist/images/star.svg" alt="" class="star-icon" width="14" height="14">
+                    <img src="dist/images/star.svg" alt="" class="star-icon" width="14" height="14">
+                    <img src="dist/images/star.svg" alt="" class="star-icon" width="14" height="14">
+                    <span class="book-rating-count">4.3</span>
+                  </div>
+                </div>
+              </div>
+              <div class="book-spine"></div>
+              <div class="book-back">
+                <div class="book-back-content">
+                  <h4 class="book-back-title">اللغة الإنجليزية للصف الأول الثانوي</h4>
+                  <div class="book-back-description">
+                    يشمل شرح مفصل للقواعد النحوية وتمارين على القراءة والفهم ونماذج للكتابة والتعبير
+                  </div>
+                  <div class="book-actions">
+                    <a href="https://t.me/G5_Y5" class="book-download" target="_blank">
+                      <img src="dist/images/telegram.svg" alt="" class="download-icon" width="16" height="16">
+                      تحميل الكتاب
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- كتاب 4 -->
+          <div class="book-card">
+            <div class="book">
+              <div class="book-front">
+                <div class="book-content">
+                  <h3 class="book-title">العلوم للصف السادس الابتدائي</h3>
+                  <p class="book-author">د. هبة محمد</p>
+                  <p class="book-description">كتاب مبسط في العلوم للصف السادس الابتدائي مع رسومات توضيحية وأنشطة
+                    تفاعلية.</p>
+                  <div class="book-meta">
+                    <span class="book-pages">120 صفحة</span>
+                    <span class="book-date">5 يونيو 2023</span>
+                  </div>
+                  <div class="book-rating">
+                    <img src="dist/images/star.svg" alt="" class="star-icon" width="14" height="14">
+                    <img src="dist/images/star.svg" alt="" class="star-icon" width="14" height="14">
+                    <img src="dist/images/star.svg" alt="" class="star-icon" width="14" height="14">
+                    <img src="dist/images/star.svg" alt="" class="star-icon" width="14" height="14">
+                    <img src="dist/images/star.svg" alt="" class="star-icon" width="14" height="14">
+                    <span class="book-rating-count">4.8</span>
+                  </div>
+                </div>
+              </div>
+              <div class="book-spine"></div>
+              <div class="book-back">
+                <div class="book-back-content">
+                  <h4 class="book-back-title">العلوم للصف السادس الابتدائي</h4>
+                  <div class="book-back-description">
+                    كتاب يشرح دروس العلوم بطريقة مبسطة مع رسومات توضيحية وأنشطة تفاعلية تساعد الطالب على الفهم
+                  </div>
+                  <div class="book-actions">
+                    <a href="https://t.me/to_explain1" class="book-download" target="_blank">
+                      <img src="dist/images/telegram.svg" alt="" class="download-icon" width="16" height="16">
+                      تحميل الكتاب
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="book-ribbon">جديد</div>
+          </div>
+        </div>
+
+        <div class="carousel-controls">
+          <button class="carousel-button prev-button">
+            <svg viewBox="0 0 24 24">
+              <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"></path>
+            </svg>
+          </button>
+          <div class="carousel-indicator">
+            <div class="carousel-dot active"></div>
+            <div class="carousel-dot"></div>
+            <div class="carousel-dot"></div>
+            <div class="carousel-dot"></div>
+          </div>
+          <button class="carousel-button next-button">
+            <svg viewBox="0 0 24 24">
+              <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم التقييمات -->
+    <section class="section reviews-section" id="reviews">
+      <div class="section-title">
+        <h2>
+          <img src="dist/images/star.svg" alt="" class="section-icon" width="28" height="28">
+          تقييمات الكتب
+        </h2>
+        <p>آراء المستخدمين حول الكتب التعليمية</p>
+      </div>
+
+      <div class="reviews-stats">
+        <div class="overall-rating">
+          <div class="rating-circle">
+            <span class="rating-number">4.8</span>
+            <span class="rating-text">من 5</span>
+          </div>
+          <div class="rating-count">بناءً على 128 تقييم</div>
+        </div>
+        <div class="rating-distribution">
+          <div class="rating-bar-container">
+            <div class="star-label">
+              <img src="dist/images/star.svg" alt="" width="16" height="16">
+              <span>5</span>
+            </div>
+            <div class="star-value">
+              <div class="star-value-fill" style="width: 75%"></div>
+            </div>
+            <div class="star-count">96</div>
+          </div>
+          <div class="rating-bar-container">
+            <div class="star-label">
+              <img src="dist/images/star.svg" alt="" width="16" height="16">
+              <span>4</span>
+            </div>
+            <div class="star-value">
+              <div class="star-value-fill" style="width: 20%"></div>
+            </div>
+            <div class="star-count">24</div>
+          </div>
+          <div class="rating-bar-container">
+            <div class="star-label">
+              <img src="dist/images/star.svg" alt="" width="16" height="16">
+              <span>3</span>
+            </div>
+            <div class="star-value">
+              <div class="star-value-fill" style="width: 5%"></div>
+            </div>
+            <div class="star-count">6</div>
+          </div>
+          <div class="rating-bar-container">
+            <div class="star-label">
+              <img src="dist/images/star.svg" alt="" width="16" height="16">
+              <span>2</span>
+            </div>
+            <div class="star-value">
+              <div class="star-value-fill" style="width: 1%"></div>
+            </div>
+            <div class="star-count">1</div>
+          </div>
+          <div class="rating-bar-container">
+            <div class="star-label">
+              <img src="dist/images/star.svg" alt="" width="16" height="16">
+              <span>1</span>
+            </div>
+            <div class="star-value">
+              <div class="star-value-fill" style="width: 0.8%"></div>
+            </div>
+            <div class="star-count">1</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reviews-list">
+        <!-- المزيد من تقييمات المستخدمين هنا -->
+      </div>
+
+      <button class="add-review-btn">
+        <svg class="review-form-icon" viewBox="0 0 24 24">
+          <path fill="currentColor"
+            d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z" />
+        </svg>
+        إضافة تقييم جديد
+      </button>
+
+      <div class="modal-overlay">
+        <div class="modal">
+          <button class="modal-close">&times;</button>
+          <h2 class="modal-title">إضافة تقييم جديد</h2>
+          <form class="review-form">
+            <div class="form-group">
+              <label class="form-label" for="reviewer-name">الاسم</label>
+              <input type="text" class="form-control" id="reviewer-name" name="reviewer-name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="book-title">الكتاب</label>
+              <select class="form-control" id="book-title" name="book-title" required>
+                <option value="">اختر الكتاب</option>
+                <option value="الرياضيات للصف الثالث الثانوي">الرياضيات للصف الثالث الثانوي</option>
+                <option value="الفيزياء للصف الثاني الثانوي">الفيزياء للصف الثاني الثانوي</option>
+                <option value="اللغة الإنجليزية للصف الأول الثانوي">اللغة الإنجليزية للصف الأول الثانوي</option>
+                <option value="العلوم للصف السادس الابتدائي">العلوم للصف السادس الابتدائي</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">التقييم</label>
+              <div class="rating-input">
+                <input type="radio" id="star5" name="rating" value="5" required>
+                <label for="star5">★</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4">★</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3">★</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2">★</label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1">★</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="review-text">التعليق</label>
+              <textarea class="form-control form-textarea" id="review-text" name="review-text" rows="5"
+                required></textarea>
+            </div>
+            <button type="submit" class="review-submit-btn">إرسال التقييم</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- العودة إلى الأعلى -->
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- العلامة المائية -->
+  <div class="watermark">
+    <img src="dist/images/watermark.svg" alt="علامة مائية" width="30" height="30"> م/أمين سيد
+  </div>
+
+  <!-- فوتر الموقع -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>مكتبة الكتب التعليمية</h3>
+          <p>موقع تعليمي متخصص في توفير الكتب الخارجية PDF للمراحل التعليمية المختلفة.</p>
+        </div>
+        <div class="footer-col">
+          <h3>روابط سريعة</h3>
+          <ul class="footer-links">
+            <li><a href="#">الرئيسية</a></li>
+            <li><a href="#books">الكتب</a></li>
+            <li><a href="#about">من نحن</a></li>
+            <li><a href="#contact">اتصل بنا</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>تواصل معنا</h3>
+          <ul class="footer-links">
+            <li><a href="https://t.me/aminsayed" target="_blank">قناة تيليجرام</a></li>
+            <li><a href="mailto:info@aminsayed.com">info@aminsayed.com</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>النشرة البريدية</h3>
+          <p>اشترك للحصول على آخر الإضافات والتحديثات</p>
+          <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="البريد الإلكتروني" required>
+            <button type="submit" class="newsletter-btn">اشترك</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>جميع الحقوق محفوظة &copy; 2023-2025 مكتبة الكتب التعليمية - م/أمين سيد</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Libraries loaded with defer attribute -->
+  <script defer src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script defer src="dist/js/script.min.js"></script>
+
+  <!-- Preload script for better performance -->
+  <script>
+    // Intersection Observer polyfill for older browsers
+    if (!('IntersectionObserver' in window)) {
+      document.write('<script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"><\/script>');
+    }
+
+    // Preload important images
+    const preloadImages = () => {
+      const criticalImages = [
+        'dist/images/logo.svg',
+        'dist/images/search.svg',
+        'dist/images/new-book.svg',
+        'dist/images/star.svg'
+      ];
+
+      criticalImages.forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
+    };
+
+    // Execute the preload function
+    preloadImages();
+  </script>
+</body>
+
+</html>

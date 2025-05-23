@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="موقع تعليمي متطور لتحميل الكتب الخارجية PDF - ENG/AMIN SAYED">
+  <meta name="keywords" content="كتب خارجية, PDF, تعليم, مصر, كتب مدرسية, مذكرات, ثانوية عامة, اعدادية, ابتدائية">
+  <meta name="author" content="ENG/AMIN SAYED">
+  <meta name="theme-color" content="#667eea">
+
+  <!-- Open Graph / Social Media Tags -->
+  <meta property="og:title" content="مكتبة الكتب التعليمية - ENG/AMIN SAYED">
+  <meta property="og:description" content="موقع تعليمي متطور لتحميل الكتب الخارجية PDF - ENG/AMIN SAYED">
+  <meta property="og:image" content="images/logo.svg">
+  <meta property="og:url" content="https://aminsayed.github.io/books/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <title>مكتبة الكتب التعليمية - ENG/AMIN SAYED</title>
+
+  <!-- Resource Files -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23667eea' d='M21,4H3C2.4,4,2,4.4,2,5v14c0,0.6,0.4,1,1,1h18c0.6,0,1-0.4,1-1V5C22,4.4,21.6,4,21,4z M11,19H4V8h7V19z M20,19h-7V8h7 V19z M20,7H4V5h16V7z'%3E%3C/path%3E%3C/svg%3E"
+    type="image/svg+xml">
+
+  <!-- Preconnect for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="recent-books.css">
+  <link rel="stylesheet" href="reviews.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Amiri:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- شاشة التحميل -->
+  <div id="loader" class="loader">
+    <div class="loader-content">
+      <div class="spinner"></div>
+      <h3>جاري تحميل الموقع...</h3>
+    </div>
+  </div>
+
+  <!-- نافذة الترحيب المحسنة -->
+  <div id="welcomeModal" class="welcome-modal">
+    <div class="welcome-content">
+      <div class="welcome-header">
+        <h1 class="welcome-title">مرحباً بك في موقعنا التعليمي</h1>
+        <p class="welcome-subtitle">نقدم لك تجربة تعليمية فريدة مع أفضل الكتب الخارجية والموارد التعليمية</p>
+      </div>
+
+      <div class="welcome-features">
+        <div class="feature-item">
+          <i class="fas fa-book-open feature-icon"></i>
+          <h3 class="feature-title">كتب خارجية PDF</h3>
+          <p class="feature-desc">مجموعة متنوعة من الكتب للمراحل التعليمية المختلفة</p>
+        </div>
+
+        <div class="feature-item">
+          <i class="fas fa-mobile-alt feature-icon"></i>
+          <h3 class="feature-title">تواصل معنا</h3>
+          <p class="feature-desc">متوفرين على واتساب وتليجرام لمساعدتك</p>
+        </div>
+
+        <div class="feature-item">
+          <i class="fas fa-graduation-cap feature-icon"></i>
+          <h3 class="feature-title">محتوى تعليمي</h3>
+          <p class="feature-desc">شرح مبسط ومفصل لجميع المناهج</p>
+        </div>
+      </div>
+
+      <div class="welcome-buttons">
+        <button class="welcome-btn primary" id="startExploring">
+          <i class="fas fa-rocket"></i>
+          ابدأ التصفح
+        </button>
+        <button class="welcome-btn secondary" id="watchTutorial">
+          <i class="fas fa-play"></i>
+          شاهد الشرح
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- خلفية الجسيمات المتحركة -->
+  <div class="particles-container" id="particles-js"></div>
+
+  <!-- خلفية متحركة -->
+  <div class="animated-bg">
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+      <div class="shape shape-5"></div>
+    </div>
+  </div>
+  <div class="container"> <!-- شريط متحرك أعلى الموقع -->
+    <div class="marquee-bar">
+      <div class="marquee-content">
+        <span class="marquee-item">📚 جديد: تم إضافة كتب خارجية PDF للابتدائي والإعدادي والثانوي</span>
+        <span class="marquee-divider">|</span>
+        <span class="marquee-item">📱 تواصل معنا عبر واتساب وتليجرام ويوتيوب</span>
+        <span class="marquee-divider">|</span>
+        <span class="marquee-item">📝 جميع الحقوق محفوظة لـ ENG/AMIN SAYED 2025 ❤️</span>
+        <span class="marquee-divider">|</span>
+        <span class="marquee-item">🌟 زيارة القناة للحصول على المزيد من الكتب والموارد التعليمية</span>
+      </div>
+    </div>
+    <header class="header">
+      <div class="header-content">
+        <div class="logo-section">
+          <div class="logo">
+            <img src="images/logo.svg" alt="شعار الموقع" class="logo-img">
+          </div>
+          <h1 class="main-title">مرحباً بكم في موقعنا المتطور</h1>
+          <p class="subtitle">منصة رقمية حديثة لمشاركة المحتوى المفيد والمعلومات القيمة</p>
+
+          <!-- إضافة مربع البحث -->
+          <div class="search-container">
+            <div class="search-box">
+              <img src="images/search.svg" alt="بحث" class="search-icon">
+              <input type="text" id="searchInput" placeholder="ابحث عن كتاب أو مادة دراسية..." class="search-input">
+              <button class="search-btn" id="searchBtn">بحث</button>
+            </div>
+          </div>
+        </div>
+        <div class="header-stats">
+          <div class="stat-item">
+            <div class="stat-number" data-target="12000">0</div>
+            <div class="stat-label">طالب مستفيد</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="320">0</div>
+            <div class="stat-label">كتاب خارجي PDF</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="45">0</div>
+            <div class="stat-label">مادة دراسية</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="99">0</div>
+            <div class="stat-label">% رضا الطلاب</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section class="text-section">
+        <div class="content-card article-section">
+          <h2><i class="fas fa-star"></i> أهمية الكتب الخارجية في تطوير مهارات الطلاب</h2>
+
+          <div class="article-header">
+            <div class="article-featured-image">
+              <div class="article-image">
+                <img src="images/article-main.svg" alt="صورة كتب تعليمية" id="article-main-img" class="featured-img">
+              </div>
+            </div>
+            <div class="article-intro">
+              <p class="article-date"><i class="fas fa-calendar-alt"></i> 23 مايو 2025</p>
+              <p class="article-author"><i class="fas fa-user"></i> بقلم: م/أمين سيد</p>
+              <p class="article-time"><i class="fas fa-clock"></i> وقت القراءة: 5 دقائق</p>
+              <div class="article-tags">
+                <span class="tag"><i class="fas fa-tag"></i> تعليم</span>
+                <span class="tag"><i class="fas fa-tag"></i> كتب</span>
+                <span class="tag"><i class="fas fa-tag"></i> طلاب</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-content">
+            <p class="article-paragraph">
+              تلعب الكتب الخارجية دوراً محورياً في تطوير مهارات الطلاب وتوسيع آفاق معرفتهم بما يتجاوز حدود المنهج
+              الدراسي. في عصر أصبحت فيه المعلومة متاحة بسهولة، بات من الضروري توجيه الطلاب نحو مصادر معرفية موثوقة
+              تساعدهم على تنمية قدراتهم وصقل مواهبهم.
+            </p>
+
+            <h3 class="article-subheading">لماذا تعتبر الكتب الخارجية مهمة؟</h3>
+            <p class="article-paragraph">
+              الكتب الخارجية توفر للطلاب فرصة للتعمق في الموضوعات التي يدرسونها بشكل أكبر مما تتيحه الكتب المدرسية. فهي
+              تقدم شرحاً أكثر تفصيلاً للمفاهيم الصعبة، وتطرح أمثلة متنوعة تساعد في فهم المادة العلمية من زوايا مختلفة.
+              كما أنها تحتوي على تمارين إضافية تساعد الطالب على اكتساب المهارة والثقة في حل المشكلات.
+            </p>
+
+            <div class="article-quote">
+              "الكتاب هو الصديق الذي لا يخذلك أبداً، والمعلم الذي لا يمل من تكرار الدرس"
+            </div>
+
+            <p class="article-paragraph">
+              في دراسة حديثة أجريت على عينة من الطلاب المتفوقين في المراحل التعليمية المختلفة، وجد أن 85% منهم يعتمدون
+              بشكل منتظم على الكتب الخارجية كمصدر أساسي للمعرفة. وأكدت الدراسة أن الاطلاع المستمر على مصادر متنوعة يساهم
+              في تنمية مهارات التفكير النقدي والإبداعي لدى الطلاب.
+            </p>
+
+            <h3 class="article-subheading">كيف تختار الكتاب الخارجي المناسب؟</h3>
+            <p class="article-paragraph">
+              عند اختيار الكتب الخارجية، يجب مراعاة عدة عوامل مهمة:
+            </p>
+
+            <ul class="article-list">
+              <li><strong>المصداقية:</strong> اختيار الكتب الصادرة عن دور نشر معروفة وذات سمعة طيبة.</li>
+              <li><strong>المحتوى:</strong> التأكد من تغطية الكتاب لجميع أجزاء المنهج بشكل شامل ومبسط.</li>
+              <li><strong>أسلوب الشرح:</strong> البحث عن الكتب التي تتميز بأسلوب سلس وواضح يناسب مستوى الطالب.</li>
+              <li><strong>التمارين:</strong> وجود تمارين متنوعة المستوى مع حلول نموذجية مفصلة.</li>
+              <li><strong>التنظيم:</strong> كتاب منظم بشكل جيد يسهل الرجوع إليه والاستفادة منه.</li>
+            </ul>
+
+            <p class="article-paragraph">
+              يمكن للطالب الاستفادة القصوى من الكتب الخارجية من خلال تخصيص وقت منتظم لقراءتها ومراجعتها، والتركيز على
+              فهم المفاهيم بدلاً من حفظها، واستخدام تقنيات تدوين الملاحظات لتلخيص النقاط المهمة.
+            </p>
+
+            <div class="article-callout">
+              <h4><i class="fas fa-lightbulb"></i> نصيحة مهمة</h4>
+              <p>ينصح بتنويع مصادر المعرفة وعدم الاعتماد على كتاب خارجي واحد. كما يفضل مناقشة المعلومات الجديدة مع
+                المعلمين والزملاء لتعزيز الفهم وتصحيح أي مفاهيم خاطئة.</p>
+            </div>
+
+            <p class="article-paragraph">
+              في موقعنا، نقدم لكم مجموعة مختارة من أفضل الكتب الخارجية للمراحل الابتدائية والإعدادية والثانوية، التي تم
+              اختيارها بعناية من قبل خبراء في المجال التعليمي. هذه الكتب متاحة للتحميل بصيغة PDF مجاناً، سعياً منا
+              لتوفير مصادر تعليمية موثوقة في متناول جميع الطلاب.
+            </p>
+
+            <div class="article-cta">
+              <p>تصفح مجموعة الكتب الخارجية واختر ما يناسبك من الروابط أدناه!</p>
+            </div>
+          </div>
+        </div>
+        <div class="content-card books-section">
+          <h2><i class="fas fa-graduation-cap"></i> تحميل الكتب الخارجية PDF</h2>
+          <div class="books-grid">
+            <div class="book-card elementary">
+              <div class="book-icon">
+                <img src="images/education.svg" alt="المرحلة الابتدائية" class="icon-img">
+              </div>
+              <h3>المرحلة الابتدائية</h3>
+              <p>تحميل الكتب الخارجية PDF للمرحلة الابتدائية</p> <a href="https://t.me/G5_Y5" class="pdf-download-btn"
+                target="_blank">
+                <i class="fab fa-telegram"></i>
+                <span>قناة الكتب على تليجرام</span>
+              </a>
+            </div>
+            <div class="book-card middle">
+              <div class="book-icon">
+                <img src="images/book.svg" alt="المرحلة الإعدادية" class="icon-img">
+              </div>
+              <h3>المرحلة الإعدادية</h3>
+              <p>تحميل الكتب الخارجية PDF للمرحلة الإعدادية</p> <a href="https://t.me/G5_Y5" class="pdf-download-btn"
+                target="_blank">
+                <i class="fab fa-telegram"></i>
+                <span>قناة الكتب على تليجرام</span>
+              </a>
+            </div>
+            <div class="book-card high">
+              <div class="book-icon">
+                <img src="images/telegram.svg" alt="الثانوية العامة" class="icon-img">
+              </div>
+              <h3>الثانوية العامة</h3>
+              <p>تحميل كتب الثانوية العامة الخارجية PDF</p> <a href="https://t.me/to_explain1" class="pdf-download-btn"
+                target="_blank">
+                <i class="fab fa-telegram"></i>
+                <span>قناة الكتب على تليجرام</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- قسم الكتب المضافة حديثاً -->
+        <div class="content-card recently-added-section">
+          <h2>
+            <img src="images/new-book.svg" class="section-icon" alt="كتب جديدة">
+            الكتب المضافة حديثاً
+            <span class="highlight-badge">جديد</span>
+          </h2>
+          <p>أحدث الكتب الخارجية التي تمت إضافتها لمساعدة طلابنا في التفوق والنجاح</p>
+
+          <div class="recent-books-container">
+            <div class="carousel-controls">
+              <button class="carousel-control prev-btn" id="prevBook"><i class="fas fa-chevron-right"></i></button>
+              <button class="carousel-control next-btn" id="nextBook"><i class="fas fa-chevron-left"></i></button>
+            </div>
+
+            <div class="books-carousel" id="booksCarousel">
+              <div class="book-slide">
+                <div class="recent-book-card">
+                  <div class="book-ribbon">جديد</div>
+                  <div class="book-cover">
+                    <div class="book-spine"></div>
+                    <div class="book-front">
+                      <div class="book-title">الرياضيات للثانوية العامة</div>
+                      <div class="book-author">أ. أحمد محمود</div>
+                    </div>
+                  </div>
+                  <div class="book-details">
+                    <h3>الرياضيات للثانوية العامة</h3>
+                    <p class="book-description">كتاب شامل يغطي كل مناهج الرياضيات للثانوية العامة</p>
+                    <div class="book-meta">
+                      <span><i class="fas fa-calendar"></i> ٢٠ مايو ٢٠٢٥</span> <span><i class="fas fa-download"></i>
+                        ٤٥٠ تحميل</span>
+                    </div>
+                    <a href="https://t.me/to_explain1" class="book-download-link">
+                      <i class="fab fa-telegram"></i> تحميل الكتاب
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="book-slide">
+                <div class="recent-book-card green-book">
+                  <div class="book-ribbon">جديد</div>
+                  <div class="book-cover">
+                    <div class="book-spine"></div>
+                    <div class="book-front">
+                      <div class="book-title">العلوم للمرحلة الإعدادية</div>
+                      <div class="book-author">د. سمير عبدالله</div>
+                    </div>
+                  </div>
+                  <div class="book-details">
+                    <h3>العلوم للمرحلة الإعدادية</h3>
+                    <p class="book-description">كتاب متكامل يشرح كل دروس العلوم للمرحلة الإعدادية</p>
+                    <div class="book-meta">
+                      <span><i class="fas fa-calendar"></i> ١٨ مايو ٢٠٢٥</span> <span><i class="fas fa-download"></i>
+                        ٣٢٠ تحميل</span>
+                    </div>
+                    <a href="https://t.me/G5_Y5" class="book-download-link">
+                      <i class="fab fa-telegram"></i> تحميل الكتاب
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="book-slide">
+                <div class="recent-book-card blue-book">
+                  <div class="book-ribbon">جديد</div>
+                  <div class="book-cover">
+                    <div class="book-spine"></div>
+                    <div class="book-front">
+                      <div class="book-title">اللغة العربية للابتدائية</div>
+                      <div class="book-author">أ. محمد السيد</div>
+                    </div>
+                  </div>
+                  <div class="book-details">
+                    <h3>اللغة العربية للابتدائية</h3>
+                    <p class="book-description">كتاب يضم جميع قواعد اللغة العربية للمرحلة الابتدائية</p>
+                    <div class="book-meta">
+                      <span><i class="fas fa-calendar"></i> ١٥ مايو ٢٠٢٥</span>
+                      <span><i class="fas fa-download"></i> ٥١٠ تحميل</span>
+                    </div>
+                    <a href="https://t.me/G5_Y5" class="book-download-link">
+                      <i class="fab fa-telegram"></i> تحميل الكتاب
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="book-slide">
+                <div class="recent-book-card purple-book">
+                  <div class="book-ribbon">جديد</div>
+                  <div class="book-cover">
+                    <div class="book-spine"></div>
+                    <div class="book-front">
+                      <div class="book-title">الفيزياء للثانوية العامة</div>
+                      <div class="book-author">د. أحمد فؤاد</div>
+                    </div>
+                  </div>
+                  <div class="book-details">
+                    <h3>الفيزياء للثانوية العامة</h3>
+                    <p class="book-description">كتاب شامل يضم جميع قوانين الفيزياء للثانوية العامة</p>
+                    <div class="book-meta">
+                      <span><i class="fas fa-calendar"></i> ١٢ مايو ٢٠٢٥</span>
+                      <span><i class="fas fa-download"></i> ٣٨٠ تحميل</span>
+                    </div>
+                    <a href="https://t.me/to_explain1" class="book-download-link">
+                      <i class="fab fa-telegram"></i> تحميل الكتاب
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- قسم الصور -->
+        <div class="content-card gallery-section">
+          <h2><i class="fas fa-images"></i> معرض الصور</h2>
+          <p>مجموعة مختارة من الصور التي تعبر عن محتوى موقعنا المميز</p>
+          <div class="image-gallery">
+            <div class="image-card" data-image="1">
+              <div class="gallery-image">
+                <img src="images/gallery-1.svg" alt="المرحلة الابتدائية" class="gallery-img">
+              </div>
+            </div>
+            <div class="image-card" data-image="2">
+              <div class="gallery-image">
+                <img src="images/gallery-2.svg" alt="المرحلة الإعدادية" class="gallery-img">
+              </div>
+            </div>
+            <div class="image-card" data-image="3">
+              <div class="gallery-image">
+                <img src="images/gallery-3.svg" alt="المرحلة الثانوية" class="gallery-img">
+              </div>
+            </div>
+            <div class="image-card" data-image="4">
+              <div class="gallery-image">
+                <img src="images/gallery-4.svg" alt="قناة تليجرام للكتب" class="gallery-img">
+              </div>
+            </div>
+          </div>
+        </div> <!-- قسم تقييمات الكتب -->
+        <div class="content-card reviews-section">
+          <h2>
+            <img src="images/star.svg" class="section-icon" alt="تقييمات">
+            تقييمات الطلاب للكتب
+          </h2>
+          <p>تعرف على آراء الطلاب والمدرسين حول كتبنا التعليمية المميزة</p>
+
+          <div class="reviews-stats">
+            <div class="overall-rating">
+              <div class="rating-circle">
+                <div class="rating-number">4.8</div>
+                <div class="rating-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="rating-text">من أصل 5</div>
+              </div>
+              <div class="rating-count">بناءً على 1,248 تقييم</div>
+            </div>
+
+            <div class="rating-bars">
+              <div class="rating-bar-item">
+                <div class="rating-label">5 <i class="fas fa-star"></i></div>
+                <div class="rating-bar">
+                  <div class="rating-fill" style="width: 80%"></div>
+                </div>
+                <div class="rating-percent">80%</div>
+              </div>
+              <div class="rating-bar-item">
+                <div class="rating-label">4 <i class="fas fa-star"></i></div>
+                <div class="rating-bar">
+                  <div class="rating-fill" style="width: 15%"></div>
+                </div>
+                <div class="rating-percent">15%</div>
+              </div>
+              <div class="rating-bar-item">
+                <div class="rating-label">3 <i class="fas fa-star"></i></div>
+                <div class="rating-bar">
+                  <div class="rating-fill" style="width: 3%"></div>
+                </div>
+                <div class="rating-percent">3%</div>
+              </div>
+              <div class="rating-bar-item">
+                <div class="rating-label">2 <i class="fas fa-star"></i></div>
+                <div class="rating-bar">
+                  <div class="rating-fill" style="width: 1%"></div>
+                </div>
+                <div class="rating-percent">1%</div>
+              </div>
+              <div class="rating-bar-item">
+                <div class="rating-label">1 <i class="fas fa-star"></i></div>
+                <div class="rating-bar">
+                  <div class="rating-fill" style="width: 1%"></div>
+                </div>
+                <div class="rating-percent">1%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews-list">
+            <div class="review-card">
+              <div class="review-header">
+                <div class="reviewer-img" style="background-color: #764ba2">
+                  <span>م.س</span>
+                </div>
+                <div class="reviewer-info">
+                  <div class="reviewer-name">محمد سعيد</div>
+                  <div class="review-date">20 مايو 2025</div>
+                </div>
+                <div class="review-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+              <div class="review-content">
+                <p>كتاب الرياضيات للثانوية العامة ممتاز جداً، أسلوبه سهل وواضح والأمثلة متنوعة وشاملة. ساعدني كثيراً في
+                  فهم المنهج وحصلت على درجات عالية بفضل تمارينه المميزة. أنصح به بشدة لكل طلاب الثانوية.</p>
+              </div>
+              <div class="review-tags">
+                <span class="review-tag">كتاب رياضيات</span>
+                <span class="review-tag">ثانوية عامة</span>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <div class="review-header">
+                <div class="reviewer-img" style="background-color: #11998e">
+                  <span>س.ع</span>
+                </div>
+                <div class="reviewer-info">
+                  <div class="reviewer-name">سارة عادل</div>
+                  <div class="review-date">15 مايو 2025</div>
+                </div>
+                <div class="review-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+              <div class="review-content">
+                <p>كتاب العلوم للمرحلة الإعدادية رائع جداً، الشرح مبسط والصور التوضيحية مفيدة جداً. ساعد ابني كثيراً في
+                  فهم دروس العلوم وأصبح متفوقاً في المادة. التجارب العلمية المشروحة في الكتاب ممتعة وسهلة التنفيذ.</p>
+              </div>
+              <div class="review-tags">
+                <span class="review-tag">كتاب علوم</span>
+                <span class="review-tag">المرحلة الإعدادية</span>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <div class="review-header">
+                <div class="reviewer-img" style="background-color: #4facfe">
+                  <span>أ.ك</span>
+                </div>
+                <div class="reviewer-info">
+                  <div class="reviewer-name">أحمد كريم</div>
+                  <div class="review-date">10 مايو 2025</div>
+                </div>
+                <div class="review-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+              <div class="review-content">
+                <p>كمدرس للغة العربية، أعتبر هذا الكتاب من أفضل الكتب الخارجية للمرحلة الابتدائية. يشرح القواعد النحوية
+                  بأسلوب مبسط ويحتوي على تدريبات متنوعة تناسب مستويات الطلاب المختلفة. الأمثلة والشواهد المستخدمة ممتازة
+                  ومناسبة لهذه المرحلة.</p>
+              </div>
+              <div class="review-tags">
+                <span class="review-tag">لغة عربية</span>
+                <span class="review-tag">المرحلة الابتدائية</span>
+                <span class="review-tag">رأي مدرس</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="add-review-section">
+            <button class="add-review-btn" id="addReviewBtn">
+              <i class="fas fa-plus"></i>
+              أضف تقييمك للكتاب
+            </button>
+          </div>
+        </div>
+
+        <!-- قسم التحميل والتواصل -->
+        <div class="content-card download-contact-section">
+          <h2><i class="fas fa-download"></i> تحميل الكتاب والتواصل</h2>
+          <p>احصل على كتابنا المجاني وتواصل معنا عبر قنوات التواصل المختلفة</p> <!-- زر تحميل الكتاب -->
+          <div class="download-section"> <a href="https://t.me/EE_LLP" target="_blank"
+              class="download-btn main-download" id="downloadBook">
+              <div class="btn-content">
+                <i class="fab fa-telegram"></i>
+                <span>انضم لقناة الكتب المجانية</span>
+              </div>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+
+          <!-- روابط التواصل الاجتماعي -->
+          <div class="social-section">
+            <h3><i class="fas fa-share-alt"></i> تواصل معنا</h3>
+            <div class="social-links"> <a href="https://wa.me/+201288708674" target="_blank"
+                class="social-btn whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                <span>واتساب</span>
+              </a>
+              <a href="https://t.me/EE_LLP" target="_blank" class="social-btn telegram">
+                <i class="fab fa-telegram"></i>
+                <span>تليجرام</span>
+              </a>
+              <a href="https://youtube.com/@to_explain1?si=TFhCmJWcVyUZuXiw" target="_blank" class="social-btn youtube">
+                <i class="fab fa-youtube"></i>
+                <span>يوتيوب</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3><i class="fas fa-user"></i> حقوق الملكية</h3>
+          <p>&copy; 2025 جميع الحقوق محفوظة لـ <strong>ENG/AMIN SAYED</strong></p>
+          <p>تم التطوير بـ <i class="fas fa-heart text-red"></i> للمجتمع العربي</p>
+        </div>
+
+        <div class="footer-section">
+          <h3><i class="fas fa-envelope"></i> للتواصل</h3>
+          <p>Email: info@s3cond7ry.me</p>
+          <p>Phone: +201288708674</p>
+        </div>
+
+        <div class="footer-section">
+          <h3><i class="fas fa-share-alt"></i> تابعنا</h3>
+          <div class="footer-social"> <a href="https://wa.me/+201288708674" target="_blank"><i
+                class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/EE_LLP" target="_blank"><i class="fab fa-telegram"></i></a>
+            <a href="https://youtube.com/@to_explain1?si=TFhCmJWcVyUZuXiw" target="_blank"><i
+                class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div class="theme-switcher" id="themeSwitcher">
+    <img src="images/theme-icon.svg" alt="تغيير السمة" class="theme-icon">
+  </div>
+
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
