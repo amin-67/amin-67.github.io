@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نتائج البحث - موقع المتميزون التعليمي</title>
+  <meta name="description" content="نتائج البحث عن المذكرات والكتب التعليمية في موقع المتميزون">
+  <meta name="keywords" content="بحث, مذكرات, كتب, مدرسية, ثانوي, اعدادي, ابتدائي">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="subject.css">
+  <link rel="stylesheet" href="search-results.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.svg" alt="المتميزون" width="40" height="40" class="logo-img">
+          <div>
+            <h1>المتميزون</h1>
+            <p>المكتبة التعليمية لطلاب مصر</p>
+          </div>
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="index.html#educational-stages">المراحل التعليمية</a></li>
+          <li><a href="index.html#categories">المواد الدراسية</a></li>
+          <li><a href="index.html#newest-books">أحدث المذكرات</a></li>
+          <li><a href="index.html#about">من نحن</a></li>
+          <li><a href="index.html#contact">اتصل بنا</a></li>
+        </ul>
+      </nav>
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="ابحث عن كتاب...">
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="breadcrumb">
+    <div class="container">
+      <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li>نتائج البحث</li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="search-results-section">
+    <div class="container">
+      <h2>نتائج البحث: <span id="search-term"></span></h2>
+      <div id="search-stats">جاري البحث...</div>
+
+      <div class="search-filters">
+        <div class="filter-group">
+          <label>المرحلة التعليمية:</label>
+          <select id="stage-filter">
+            <option value="all">الكل</option>
+            <option value="secondary">الثانوية</option>
+            <option value="preparatory">الإعدادية</option>
+            <option value="primary">الابتدائية</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>المادة الدراسية:</label>
+          <select id="subject-filter">
+            <option value="all">الكل</option>
+            <option value="arabic">اللغة العربية</option>
+            <option value="math">الرياضيات</option>
+            <option value="science">العلوم</option>
+            <option value="physics">الفيزياء</option>
+            <option value="chemistry">الكيمياء</option>
+            <option value="biology">الأحياء</option>
+            <option value="english">اللغة الإنجليزية</option>
+            <option value="social">الدراسات الاجتماعية</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="search-results" class="books-container">
+        <!-- Results will be loaded here dynamically -->
+      </div>
+
+      <div id="no-results" class="no-results" style="display: none;">
+        <div class="no-results-icon">
+          <i class="fas fa-search"></i>
+        </div>
+        <h3>لم يتم العثور على نتائج</h3>
+        <p>لم يتم العثور على مذكرات أو كتب تطابق بحثك. حاول استخدام كلمات مختلفة أو تصفح المذكرات حسب المرحلة التعليمية.
+        </p>
+        <div class="no-results-actions">
+          <a href="index.html#educational-stages" class="btn">تصفح حسب المرحلة</a>
+          <a href="index.html#categories" class="btn btn-alt">تصفح حسب المادة</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="popular-searches">
+    <div class="container">
+      <h3>عمليات البحث الشائعة</h3>
+      <div class="popular-searches-tags">
+        <a href="search-results.html?q=الامتحان">الامتحان</a>
+        <a href="search-results.html?q=الإبداع">الإبداع</a>
+        <a href="search-results.html?q=التفوق">التفوق</a>
+        <a href="search-results.html?q=لغة عربية">لغة عربية</a>
+        <a href="search-results.html?q=فيزياء">فيزياء</a>
+        <a href="search-results.html?q=كيمياء">كيمياء</a>
+        <a href="search-results.html?q=رياضيات">رياضيات</a>
+        <a href="search-results.html?q=الثانوية العامة">الثانوية العامة</a>
+        <a href="search-results.html?q=ملخصات">ملخصات</a>
+        <a href="search-results.html?q=نماذج امتحانات">نماذج امتحانات</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="logo.svg" alt="المتميزون" width="40" height="40">
+          <h2>المتميزون</h2>
+          <p>المكتبة التعليمية لطلاب مصر</p>
+        </div>
+        <div class="footer-links">
+          <h3>روابط سريعة</h3>
+          <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="index.html#educational-stages">المراحل التعليمية</a></li>
+            <li><a href="index.html#categories">المواد الدراسية</a></li>
+            <li><a href="index.html#newest-books">أحدث المذكرات</a></li>
+            <li><a href="index.html#about">من نحن</a></li>
+            <li><a href="index.html#contact">اتصل بنا</a></li>
+          </ul>
+        </div>
+        <div class="footer-stages">
+          <h3>المراحل التعليمية</h3>
+          <ul>
+            <li><a href="primary/index.html">المرحلة الابتدائية</a></li>
+            <li><a href="preparatory/index.html">المرحلة الإعدادية</a></li>
+            <li><a href="secondary/index.html">المرحلة الثانوية</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>تواصل معنا</h3>
+          <div class="social-icons">
+            <a href="https://t.me/to_explain1" target="_blank" title="قناة تيليجرام"><i class="fab fa-telegram"></i></a>
+            <a href="https://t.me/EE_LLP" target="_blank" title="حساب تيليجرام الشخصي"><i
+                class="fab fa-telegram-plane"></i></a>
+            <a href="https://youtube.com/@to_explain1?si=TFhCmJWcVyUZuXiw" target="_blank" title="قناة اليوتيوب"><i
+                class="fab fa-youtube"></i></a>
+          </div>
+          <p>البريد الإلكتروني: info@s3cond7ry.me</p>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2023 المتميزون - جميع الحقوق محفوظة</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Search functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get search query from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const searchQuery = urlParams.get('q');
+
+      if (searchQuery) {
+        // Display search term
+        document.getElementById('search-term').textContent = searchQuery;
+        document.getElementById('search-input').value = searchQuery;
+
+        // Simulate search (in a real site, this would connect to a backend)
+        performSearch(searchQuery);
+      } else {
+        document.getElementById('search-term').textContent = "لا يوجد كلمة بحث";
+        document.getElementById('search-stats').textContent = "0 نتيجة";
+        document.getElementById('no-results').style.display = 'block';
+      }
+
+      // Set up filter change events
+      document.getElementById('stage-filter').addEventListener('change', filterResults);
+      document.getElementById('subject-filter').addEventListener('change', filterResults);
+    });
+
+    // Function to perform search
+    function performSearch(query) {
+      // In a real implementation, this would fetch results from a backend
+      // For demonstration, we'll simulate results based on our known book data
+
+      // Convert query to lowercase for case-insensitive matching
+      query = query.toLowerCase();
+
+      // Our book dataset (in a real site, this would come from a database)
+      const books = [
+        {
+          title: "الامتحان في اللغة العربية",
+          stage: "secondary",
+          subject: "arabic",
+          grade: "الصف الثالث الثانوي",
+          publisher: "سلسلة الامتحان",
+          rating: "4.5",
+          image: "images/books/arabic/alamthan-arabic.jpg",
+          url: "secondary/arabic/alamthan-arabic.html",
+          description: "مذكرة الامتحان في اللغة العربية للصف الثالث الثانوي الشاملة لجميع فروع المادة - نسخة 2023"
+        },
+        {
+          title: "الامتحان في الفيزياء",
+          stage: "secondary",
+          subject: "physics",
+          grade: "الصف الثالث الثانوي",
+          publisher: "سلسلة الامتحان",
+          rating: "4.8",
+          image: "images/books/physics/alamthan-physics.jpg",
+          url: "secondary/physics/alamthan-physics.html",
+          description: "مذكرة الامتحان في الفيزياء للصف الثالث الثانوي - شرح وافي ومبسط لجميع دروس المنهج مع حل نماذج متنوعة - نسخة 2023"
+        },
+        {
+          title: "الامتحان في الكيمياء",
+          stage: "secondary",
+          subject: "chemistry",
+          grade: "الصف الثالث الثانوي",
+          publisher: "سلسلة الامتحان",
+          rating: "4.7",
+          image: "images/books/chemistry/alamthan-chemistry.jpg",
+          url: "secondary/chemistry/alamthan-chemistry.html",
+          description: "مذكرة الامتحان في الكيمياء للصف الثالث الثانوي - شرح المنهج كاملاً بطريقة مبسطة ومنظمة - نسخة 2023"
+        },
+        {
+          title: "الإبداع في اللغة العربية",
+          stage: "secondary",
+          subject: "arabic",
+          grade: "الصف الثالث الثانوي",
+          publisher: "سلسلة الإبداع",
+          rating: "4.9",
+          image: "images/books/arabic/alibdaa-arabic.jpg",
+          url: "secondary/arabic/alibdaa-arabic.html",
+          description: "مذكرة الإبداع الشاملة في اللغة العربية للصف الثالث الثانوي مع نماذج امتحانات وإجاباتها - نسخة 2023"
+        },
+        {
+          title: "التفوق في الفيزياء",
+          stage: "secondary",
+          subject: "physics",
+          grade: "الصف الثالث الثانوي",
+          publisher: "سلسلة التفوق",
+          rating: "4.7",
+          image: "images/books/physics/altafawok-physics.jpg",
+          url: "secondary/physics/altafawok-physics.html",
+          description: "مذكرة التفوق في الفيزياء للصف الثالث الثانوي - شرح المنهج كاملاً مع تمارين وأسئلة شاملة ونماذج امتحانات - نسخة 2023"
+        }
+      ];
+
+      // Filter books that match the search query
+      const results = books.filter(book => {
+        return book.title.toLowerCase().includes(query) ||
+          book.publisher.toLowerCase().includes(query) ||
+          book.description.toLowerCase().includes(query) ||
+          book.subject.toLowerCase().includes(query) ||
+          book.grade.toLowerCase().includes(query);
+      });
+
+      // Display results
+      displayResults(results);
+    }
+
+    // Function to display search results
+    function displayResults(results) {
+      const resultsContainer = document.getElementById('search-results');
+      const noResults = document.getElementById('no-results');
+      const searchStats = document.getElementById('search-stats');
+
+      // Update search stats
+      searchStats.textContent = `${results.length} ${results.length === 1 ? 'نتيجة' : 'نتائج'}`;
+
+      if (results.length === 0) {
+        // No results
+        noResults.style.display = 'block';
+        resultsContainer.innerHTML = '';
+        return;
+      }
+
+      // Display results
+      noResults.style.display = 'none';
+      resultsContainer.innerHTML = '';
+
+      results.forEach(book => {
+        // Create stars markup
+        let starsMarkup = '';
+        const rating = parseFloat(book.rating);
+        for (let i = 1; i <= 5; i++) {
+          if (i <= Math.floor(rating)) {
+            starsMarkup += '<i class="fas fa-star"></i>';
+          } else if (i === Math.ceil(rating) && !Number.isInteger(rating)) {
+            starsMarkup += '<i class="fas fa-star-half-alt"></i>';
+          } else {
+            starsMarkup += '<i class="far fa-star"></i>';
+          }
+        }
+
+        const bookCard = document.createElement('div');
+        bookCard.className = 'book-card';
+        bookCard.setAttribute('data-stage', book.stage);
+        bookCard.setAttribute('data-subject', book.subject);
+
+        bookCard.innerHTML = `
+          <div class="book-cover">
+            <a href="${book.url}">
+              <img src="${book.image}" alt="${book.title}">
+              <div class="book-overlay">
+                <span>تحميل</span>
+              </div>
+            </a>
+          </div>
+          <div class="book-details">
+            <h3><a href="${book.url}">${book.title}</a></h3>
+            <div class="book-meta">
+              <span class="grade">${book.grade}</span>
+              <span class="publisher">${book.publisher}</span>
+            </div>
+            <div class="book-rating">
+              ${starsMarkup}
+              <span>(${book.rating})</span>
+            </div>
+            <p class="book-description">${book.description}</p>
+            <a href="${book.url}" class="btn">عرض التفاصيل</a>
+          </div>
+        `;
+
+        resultsContainer.appendChild(bookCard);
+      });
+    }
+
+    // Function to filter search results
+    function filterResults() {
+      const stageFilter = document.getElementById('stage-filter').value;
+      const subjectFilter = document.getElementById('subject-filter').value;
+
+      const bookCards = document.querySelectorAll('.book-card');
+      let visibleCount = 0;
+
+      bookCards.forEach(card => {
+        const stageMatch = stageFilter === 'all' || card.getAttribute('data-stage') === stageFilter;
+        const subjectMatch = subjectFilter === 'all' || card.getAttribute('data-subject') === subjectFilter;
+
+        if (stageMatch && subjectMatch) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Update search stats
+      document.getElementById('search-stats').textContent = `${visibleCount} ${visibleCount === 1 ? 'نتيجة' : 'نتائج'}`;
+
+      // Show no results message if needed
+      document.getElementById('no-results').style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+  </script>
+</body>
+
+</html>

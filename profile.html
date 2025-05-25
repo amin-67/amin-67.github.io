@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الملف الشخصي | المتميزون</title>
+  <meta name="description" content="الملف الشخصي الخاص بك في موقع المتميزون - إدارة معلوماتك الشخصية وتفضيلاتك">
+  <meta name="keywords" content="الملف الشخصي, تعليم, مصر, ابتدائي, اعدادي, ثانوي">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="auth.css">
+  <style>
+    .profile-page {
+      padding: 40px 0;
+    }
+
+    .profile-container {
+      display: flex;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .profile-sidebar {
+      width: 250px;
+      flex-shrink: 0;
+    }
+
+    .profile-main {
+      flex-grow: 1;
+    }
+
+    .profile-avatar-container {
+      background-color: #f7fafc;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .profile-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .profile-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #2d3748;
+    }
+
+    .profile-email {
+      color: #718096;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    .profile-menu {
+      background-color: #f7fafc;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .profile-menu-item {
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #4a5568;
+      border-bottom: 1px solid #e2e8f0;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .profile-menu-item:last-child {
+      border-bottom: none;
+    }
+
+    .profile-menu-item.active,
+    .profile-menu-item:hover {
+      background-color: #edf2f7;
+      color: #4299e1;
+    }
+
+    .profile-menu-item i {
+      width: 20px;
+      text-align: center;
+    }
+
+    .profile-tab {
+      display: none;
+    }
+
+    .profile-tab.active {
+      display: block;
+    }
+
+    .profile-tab-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .profile-tab-header h2 {
+      margin: 0;
+      color: #2d3748;
+    }
+
+    .profile-section {
+      background-color: white;
+      border-radius: 8px;
+      padding: 25px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      margin-bottom: 20px;
+    }
+
+    .profile-section h3 {
+      color: #2d3748;
+      border-bottom: 1px solid #edf2f7;
+      padding-bottom: 15px;
+      margin-top: 0;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #4a5568;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 15px;
+    }
+
+    .form-row .form-group {
+      flex: 1;
+    }
+
+    .form-actions {
+      margin-top: 20px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .btn-cancel {
+      background-color: transparent;
+      border: 1px solid #e2e8f0;
+    }
+
+    .progress-container {
+      width: 100%;
+      background-color: #edf2f7;
+      border-radius: 8px;
+      height: 8px;
+      margin-top: 8px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      border-radius: 8px;
+      background-color: #4299e1;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .activity-row {
+      display: flex;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid #edf2f7;
+    }
+
+    .activity-row:last-child {
+      border-bottom: none;
+    }
+
+    .activity-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #edf2f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #4299e1;
+      margin-left: 15px;
+    }
+
+    .activity-content {
+      flex-grow: 1;
+    }
+
+    .activity-title {
+      font-weight: 500;
+      color: #2d3748;
+      margin-bottom: 5px;
+    }
+
+    .activity-subtitle {
+      color: #718096;
+      font-size: 0.9rem;
+    }
+
+    .activity-time {
+      color: #a0aec0;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .profile-container {
+        flex-direction: column;
+      }
+
+      .profile-sidebar {
+        width: 100%;
+      }
+
+      .form-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.svg" alt="المتميزون" width="40" height="40" class="logo-img">
+          <div>
+            <h1>المتميزون</h1>
+            <p>المكتبة التعليمية لطلاب مصر</p>
+          </div>
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="index.html#educational-stages">المراحل التعليمية</a></li>
+          <li><a href="index.html#categories">المواد الدراسية</a></li>
+          <li><a href="index.html#newest-books">أحدث المذكرات</a></li>
+          <li><a href="index.html#about">من نحن</a></li>
+          <li><a href="index.html#contact">اتصل بنا</a></li>
+        </ul>
+      </nav>
+      <div class="search-box">
+        <input type="text" placeholder="ابحث عن كتاب...">
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </div>
+      <button id="auth-trigger" class="btn btn-outline">
+        <i class="fas fa-user"></i>
+        تسجيل الدخول
+      </button>
+      <div id="user-menu" class="user-menu" style="display: none;">
+        <div class="user-menu-button">
+          <img src="images/avatars/default-avatar.jpg" alt="صورة المستخدم" class="user-avatar">
+          <span class="user-name">اسم المستخدم</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div id="user-dropdown" class="user-dropdown">
+          <a href="profile.html" class="user-dropdown-item">
+            <i class="fas fa-user"></i>
+            الملف الشخصي
+          </a>
+          <a href="favorites.html" class="user-dropdown-item">
+            <i class="fas fa-heart"></i>
+            المفضلة
+          </a>
+          <a href="downloads.html" class="user-dropdown-item">
+            <i class="fas fa-download"></i>
+            التحميلات
+          </a>
+          <hr>
+          <a href="#" id="logout-button" class="user-dropdown-item">
+            <i class="fas fa-sign-out-alt"></i>
+            تسجيل الخروج
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Authentication Modal -->
+  <div id="auth-modal" class="auth-modal">
+    <div class="auth-container">
+      <button id="auth-close" class="auth-close">
+        <i class="fas fa-times"></i>
+      </button>
+      <h3 class="auth-title">مرحباً بك في المتميزون</h3>
+      <div class="auth-tabs">
+        <div id="login-tab" class="auth-tab active">تسجيل الدخول</div>
+        <div id="register-tab" class="auth-tab">إنشاء حساب جديد</div>
+      </div>
+      <form id="login-form" class="auth-form active">
+        <div class="form-group">
+          <label for="login-email">البريد الإلكتروني</label>
+          <input type="email" id="login-email" required>
+        </div>
+        <div class="form-group">
+          <label for="login-password">كلمة المرور</label>
+          <input type="password" id="login-password" required>
+        </div>
+        <button type="submit" class="btn-auth">تسجيل الدخول</button>
+        <div class="forgot-password">
+          <a href="#">نسيت كلمة المرور؟</a>
+        </div>
+        <div class="social-login">
+          <p>أو سجل الدخول باستخدام</p>
+          <div class="social-buttons">
+            <div class="social-button facebook">
+              <i class="fab fa-facebook-f"></i>
+            </div>
+            <div class="social-button google">
+              <i class="fab fa-google"></i>
+            </div>
+            <div class="social-button twitter">
+              <i class="fab fa-twitter"></i>
+            </div>
+          </div>
+        </div>
+      </form>
+      <form id="register-form" class="auth-form">
+        <div class="form-group">
+          <label for="register-name">الاسم</label>
+          <input type="text" id="register-name" required>
+        </div>
+        <div class="form-group">
+          <label for="register-email">البريد الإلكتروني</label>
+          <input type="email" id="register-email" required>
+        </div>
+        <div class="form-group">
+          <label for="register-password">كلمة المرور</label>
+          <input type="password" id="register-password" required>
+        </div>
+        <div class="form-group">
+          <label for="register-confirm">تأكيد كلمة المرور</label>
+          <input type="password" id="register-confirm" required>
+        </div>
+        <button type="submit" class="btn-auth">إنشاء حساب</button>
+        <div class="social-login">
+          <p>أو سجل باستخدام</p>
+          <div class="social-buttons">
+            <div class="social-button facebook">
+              <i class="fab fa-facebook-f"></i>
+            </div>
+            <div class="social-button google">
+              <i class="fab fa-google"></i>
+            </div>
+            <div class="social-button twitter">
+              <i class="fab fa-twitter"></i>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="breadcrumb">
+    <div class="container">
+      <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li>الملف الشخصي</li>
+      </ul>
+    </div>
+  </div>
+
+  <main class="profile-page">
+    <div class="container">
+      <!-- Login Notice (shown if not logged in) -->
+      <div class="login-notice" id="login-notice">
+        <div class="notice-content">
+          <i class="fas fa-user-lock"></i>
+          <h3>يرجى تسجيل الدخول</h3>
+          <p>للوصول إلى الملف الشخصي الخاص بك، يرجى تسجيل الدخول أولاً</p>
+          <button class="btn btn-primary show-auth-modal">تسجيل الدخول</button>
+        </div>
+      </div>
+
+      <!-- Profile Content (shown when logged in) -->
+      <div id="profile-content" style="display: none;">
+        <div class="profile-container">
+          <!-- Profile Sidebar -->
+          <div class="profile-sidebar">
+            <div class="profile-avatar-container">
+              <img src="images/avatars/default-avatar.jpg" alt="صورة الملف الشخصي" class="profile-avatar"
+                id="profile-avatar">
+              <h3 class="profile-name" id="profile-name">اسم المستخدم</h3>
+              <p class="profile-email" id="profile-email">user@example.com</p>
+              <button class="btn btn-secondary btn-sm">تغيير الصورة</button>
+            </div>
+
+            <div class="profile-menu">
+              <div class="profile-menu-item active" data-tab="personal">
+                <i class="fas fa-user"></i>
+                المعلومات الشخصية
+              </div>
+              <div class="profile-menu-item" data-tab="activity">
+                <i class="fas fa-history"></i>
+                نشاطاتي
+              </div>
+              <div class="profile-menu-item" data-tab="security">
+                <i class="fas fa-shield-alt"></i>
+                الأمان
+              </div>
+              <div class="profile-menu-item" data-tab="preferences">
+                <i class="fas fa-cog"></i>
+                إعدادات الحساب
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile Main Content -->
+          <div class="profile-main">
+            <!-- Personal Information Tab -->
+            <div class="profile-tab active" id="personal-tab">
+              <div class="profile-tab-header">
+                <h2>المعلومات الشخصية</h2>
+              </div>
+
+              <div class="profile-section">
+                <h3>البيانات الأساسية</h3>
+                <form id="personal-info-form">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="profile-fullname">الاسم الكامل</label>
+                      <input type="text" id="profile-fullname" value="">
+                    </div>
+                    <div class="form-group">
+                      <label for="profile-username">اسم المستخدم</label>
+                      <input type="text" id="profile-username" value="">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="profile-bio">نبذة شخصية</label>
+                    <input type="text" id="profile-bio" placeholder="أضف نبذة قصيرة عنك...">
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="profile-phone">رقم الهاتف</label>
+                      <input type="tel" id="profile-phone" placeholder="أدخل رقم الهاتف">
+                    </div>
+                    <div class="form-group">
+                      <label for="profile-email-edit">البريد الإلكتروني</label>
+                      <input type="email" id="profile-email-edit" value="">
+                    </div>
+                  </div>
+
+                  <div class="form-actions">
+                    <button type="button" class="btn btn-cancel">إلغاء</button>
+                    <button type="submit" class="btn btn-primary">حفظ التغييرات</button>
+                  </div>
+                </form>
+              </div>
+
+              <div class="profile-section">
+                <h3>المعلومات التعليمية</h3>
+                <form id="education-info-form">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="profile-stage">المرحلة التعليمية</label>
+                      <select id="profile-stage" class="form-select">
+                        <option value="">اختر المرحلة التعليمية</option>
+                        <option value="primary">المرحلة الابتدائية</option>
+                        <option value="preparatory">المرحلة الإعدادية</option>
+                        <option value="secondary">المرحلة الثانوية</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="profile-grade">الصف الدراسي</label>
+                      <select id="profile-grade" class="form-select">
+                        <option value="">اختر الصف الدراسي</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-actions">
+                    <button type="button" class="btn btn-cancel">إلغاء</button>
+                    <button type="submit" class="btn btn-primary">حفظ التغييرات</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Activity Tab -->
+            <div class="profile-tab" id="activity-tab">
+              <div class="profile-tab-header">
+                <h2>نشاطاتي</h2>
+              </div>
+
+              <div class="profile-section">
+                <h3>أحدث النشاطات</h3>
+
+                <div class="activity-row">
+                  <div class="activity-icon">
+                    <i class="fas fa-download"></i>
+                  </div>
+                  <div class="activity-content">
+                    <div class="activity-title">تحميل كتاب "سلاح التلميذ في اللغة الإنجليزية"</div>
+                    <div class="activity-subtitle">للصف الأول الابتدائي</div>
+                  </div>
+                  <div class="activity-time">منذ ساعتين</div>
+                </div>
+
+                <div class="activity-row">
+                  <div class="activity-icon">
+                    <i class="fas fa-heart"></i>
+                  </div>
+                  <div class="activity-content">
+                    <div class="activity-title">إضافة "الأضواء في التربية الدينية" إلى المفضلة</div>
+                    <div class="activity-subtitle">للصف الأول الابتدائي</div>
+                  </div>
+                  <div class="activity-time">منذ 3 أيام</div>
+                </div>
+
+                <div class="activity-row">
+                  <div class="activity-icon">
+                    <i class="fas fa-user"></i>
+                  </div>
+                  <div class="activity-content">
+                    <div class="activity-title">تسجيل الدخول إلى الحساب</div>
+                    <div class="activity-subtitle">من متصفح كروم</div>
+                  </div>
+                  <div class="activity-time">منذ أسبوع</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Security Tab -->
+            <div class="profile-tab" id="security-tab">
+              <div class="profile-tab-header">
+                <h2>الأمان</h2>
+              </div>
+
+              <div class="profile-section">
+                <h3>تغيير كلمة المرور</h3>
+                <form id="password-change-form">
+                  <div class="form-group">
+                    <label for="current-password">كلمة المرور الحالية</label>
+                    <input type="password" id="current-password">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="new-password">كلمة المرور الجديدة</label>
+                    <input type="password" id="new-password">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="confirm-password">تأكيد كلمة المرور</label>
+                    <input type="password" id="confirm-password">
+                  </div>
+
+                  <div class="form-actions">
+                    <button type="button" class="btn btn-cancel">إلغاء</button>
+                    <button type="submit" class="btn btn-primary">تغيير كلمة المرور</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Preferences Tab -->
+            <div class="profile-tab" id="preferences-tab">
+              <div class="profile-tab-header">
+                <h2>إعدادات الحساب</h2>
+              </div>
+
+              <div class="profile-section">
+                <h3>إشعارات البريد الإلكتروني</h3>
+                <form id="notifications-form">
+                  <div class="form-check">
+                    <input type="checkbox" id="email-new-books" checked>
+                    <label for="email-new-books">إشعارات الكتب الجديدة</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="checkbox" id="email-book-updates" checked>
+                    <label for="email-book-updates">تحديثات الكتب المفضلة</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="checkbox" id="email-marketing">
+                    <label for="email-marketing">النشرة البريدية والعروض</label>
+                  </div>
+
+                  <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">حفظ التغييرات</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <img src="logo.svg" alt="المتميزون" width="40" height="40">
+            <div>
+              <h3>المتميزون</h3>
+              <p>المكتبة التعليمية لطلاب مصر</p>
+            </div>
+          </div>
+          <p>نقدم أفضل الكتب والمذكرات التعليمية لجميع المراحل الدراسية مجاناً</p>
+        </div>
+        <div class="footer-section">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="primary/index.html">المرحلة الابتدائية</a></li>
+            <li><a href="preparatory/index.html">المرحلة الإعدادية</a></li>
+            <li><a href="secondary/index.html">المرحلة الثانوية</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>المواد الدراسية</h4>
+          <ul>
+            <li><a href="secondary/arabic/index.html">اللغة العربية</a></li>
+            <li><a href="secondary/physics/index.html">الفيزياء</a></li>
+            <li><a href="secondary/chemistry/index.html">الكيمياء</a></li>
+            <li><a href="secondary/english/index.html">اللغة الإنجليزية</a></li>
+            <li><a href="secondary/math/index.html">الرياضيات</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>تواصل معنا</h4>
+          <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> info@s3cond7ry.me</p>
+            <p><i class="fas fa-phone"></i> +201288708674</p>
+          </div>
+          <div class="social-links">
+            <a href="https://t.me/to_explain1" title="قناة تيليجرام"><i class="fab fa-telegram"></i></a>
+            <a href="https://t.me/EE_LLP" title="حساب تيليجرام الشخصي"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://youtube.com/@to_explain1?si=TFhCmJWcVyUZuXiw" title="قناة اليوتيوب"><i
+                class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 المتميزون. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const loginNotice = document.getElementById('login-notice');
+      const profileContent = document.getElementById('profile-content');
+      const profileMenuItems = document.querySelectorAll('.profile-menu-item');
+      const profileTabs = document.querySelectorAll('.profile-tab');
+      const showAuthButtons = document.querySelectorAll('.show-auth-modal');
+
+      // Profile data fields
+      const profileNameDisplay = document.getElementById('profile-name');
+      const profileEmailDisplay = document.getElementById('profile-email');
+      const profileAvatarDisplay = document.getElementById('profile-avatar');
+      const profileFullnameInput = document.getElementById('profile-fullname');
+      const profileUsernameInput = document.getElementById('profile-username');
+      const profileEmailInput = document.getElementById('profile-email-edit');
+
+      // Show auth modal when login buttons are clicked
+      showAuthButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          const authModal = document.getElementById('auth-modal');
+          if (authModal) {
+            authModal.style.display = 'flex';
+          }
+        });
+      });
+
+      // Tab switching
+      profileMenuItems.forEach(item => {
+        item.addEventListener('click', function () {
+          // Remove active class from all menu items
+          profileMenuItems.forEach(menuItem => {
+            menuItem.classList.remove('active');
+          });
+
+          // Add active class to clicked menu item
+          this.classList.add('active');
+
+          // Show corresponding tab
+          const tabId = this.dataset.tab;
+          profileTabs.forEach(tab => {
+            tab.classList.remove('active');
+          });
+
+          document.getElementById(tabId + '-tab').classList.add('active');
+        });
+      });
+
+      // Personal info form
+      const personalInfoForm = document.getElementById('personal-info-form');
+      if (personalInfoForm) {
+        personalInfoForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          // Demo: Save profile information to local storage
+          const userData = JSON.parse(localStorage.getItem('userData') || '{}');
+
+          userData.user = userData.user || {};
+          userData.user.name = profileFullnameInput.value;
+          userData.user.username = profileUsernameInput.value;
+          userData.user.email = profileEmailInput.value;
+
+          localStorage.setItem('userData', JSON.stringify(userData));
+
+          // Update profile display
+          updateProfileDisplay();
+
+          // Show success message
+          alert('تم حفظ المعلومات بنجاح!');
+        });
+      }
+
+      // Check authentication status
+      function checkAuthStatus() {
+        const userData = localStorage.getItem('userData');
+
+        if (userData) {
+          const parsedData = JSON.parse(userData);
+          if (parsedData.user) {
+            // User is logged in
+            loginNotice.style.display = 'none';
+            profileContent.style.display = 'block';
+
+            // Update profile display
+            updateProfileDisplay();
+          } else {
+            // User data exists but incomplete
+            loginNotice.style.display = 'block';
+            profileContent.style.display = 'none';
+          }
+        } else {
+          // No user data
+          loginNotice.style.display = 'block';
+          profileContent.style.display = 'none';
+        }
+      }
+
+      // Update profile display
+      function updateProfileDisplay() {
+        const userData = localStorage.getItem('userData');
+        if (userData) {
+          const parsedData = JSON.parse(userData);
+          const user = parsedData.user || {};
+
+          // Update display elements
+          if (profileNameDisplay) {
+            profileNameDisplay.textContent = user.name || 'اسم المستخدم';
+          }
+
+          if (profileEmailDisplay) {
+            profileEmailDisplay.textContent = user.email || 'user@example.com';
+          }
+
+          if (profileAvatarDisplay) {
+            profileAvatarDisplay.src = user.avatar || 'images/avatars/default-avatar.jpg';
+          }
+
+          // Update form inputs
+          if (profileFullnameInput) {
+            profileFullnameInput.value = user.name || '';
+          }
+
+          if (profileUsernameInput) {
+            profileUsernameInput.value = user.username || '';
+          }
+
+          if (profileEmailInput) {
+            profileEmailInput.value = user.email || '';
+          }
+        }
+      }
+
+      // Initial check
+      checkAuthStatus();
+
+      // Listen for authentication changes
+      window.addEventListener('storage', function (e) {
+        if (e.key === 'userData') {
+          checkAuthStatus();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
