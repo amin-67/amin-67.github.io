@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>كتب التربية الإسلامية - الصف الثاني الابتدائي</title>
+  <meta name="description"
+    content="جميع كتب التربية الإسلامية للصف الثاني الابتدائي - سلاح التلميذ وقطر الندى مع الشرح والتمارين مجاناً">
+  <meta name="keywords" content="التربية الإسلامية, الصف الثاني الابتدائي, سلاح التلميذ, قطر الندى, كتب إسلامية">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="كتب التربية الإسلامية - الصف الثاني الابتدائي">
+  <meta property="og:description" content="جميع كتب التربية الإسلامية للصف الثاني الابتدائي مع الشرح والتمارين مجاناً">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://s3cond7ry.me/primary/grade2/religion/">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://s3cond7ry.me/primary/grade2/religion/">
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../secondary.css">
+  <link rel="stylesheet" href="../../../subject.css">
+  <link rel="stylesheet" href="../../../enhanced-design.css">
+  <link rel="stylesheet" href="../../../scroll-animations.js">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --religion-primary: #2d5016;
+      --religion-secondary: #4a7c23;
+      --religion-accent: #6ba832;
+      --religion-light: #e8f5e8;
+      --religion-gradient: linear-gradient(135deg, #2d5016 0%, #4a7c23 50%, #6ba832 100%);
+      --religion-glow: rgba(107, 168, 50, 0.3);
+    }
+
+    .subject-header {
+      background: var(--religion-gradient);
+      background-size: 400% 400%;
+      animation: gradientShift 8s ease-in-out infinite;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .subject-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="islamic" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23islamic)"/></svg>');
+      animation: float 20s ease-in-out infinite;
+    }
+
+    .subject-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 2;
+    }
+
+    .subject-description {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.9);
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+      position: relative;
+      z-index: 2;
+    }
+
+    .book-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(45, 80, 22, 0.1);
+      transition: all 0.3s ease;
+      border: 3px solid transparent;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 0.6s ease forwards;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .book-card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .book-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .book-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--religion-gradient);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+
+    .book-card:hover::before {
+      opacity: 0.05;
+    }
+
+    .book-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(45, 80, 22, 0.2);
+      border-color: var(--religion-accent);
+    }
+
+    .book-card * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .book-icon {
+      font-size: 3rem;
+      color: var(--religion-primary);
+      margin-bottom: 1rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .book-card:hover .book-icon {
+      color: var(--religion-accent);
+      transform: scale(1.1);
+    }
+
+    .book-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--religion-primary);
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .book-subtitle {
+      color: #666;
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .book-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-tag {
+      background: var(--religion-light);
+      color: var(--religion-primary);
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1px solid var(--religion-accent);
+    }
+
+    .book-button {
+      background: var(--religion-gradient);
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      transition: all 0.3s ease;
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .book-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px var(--religion-glow);
+      color: white;
+    }
+
+    .stats-section {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 3rem 0;
+      box-shadow: 0 10px 30px rgba(45, 80, 22, 0.1);
+      border: 3px solid var(--religion-light);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .stat-item {
+      padding: 1rem;
+      border-radius: 15px;
+      background: var(--religion-light);
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .stat-item:hover {
+      background: var(--religion-gradient);
+      color: white;
+      transform: translateY(-5px);
+      border-color: var(--religion-accent);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: var(--religion-primary);
+      display: block;
+    }
+
+    .stat-item:hover .stat-number {
+      color: white;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+
+    .stat-item:hover .stat-label {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .features-section {
+      background: var(--religion-gradient);
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      margin: 3rem 0;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .features-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="mosque" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M15 5 L20 15 L10 15 Z M15 25 C18 25 20 22 20 20 C20 18 18 15 15 15 C12 15 10 18 10 20 C10 22 12 25 15 25" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23mosque)"/></svg>');
+    }
+
+    .features-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .feature-item {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .feature-item:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-5px);
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .feature-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-description {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.5;
+    }
+
+    @keyframes gradientShift {
+
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-20px) rotate(5deg);
+      }
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .breadcrumb {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .breadcrumb a {
+      color: var(--religion-primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--religion-accent);
+    }
+
+    .breadcrumb .separator {
+      margin: 0 0.5rem;
+      color: #666;
+    }
+
+    .breadcrumb .current {
+      color: var(--religion-accent);
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .subject-title {
+        font-size: 2rem;
+      }
+
+      .book-card {
+        padding: 1.5rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "كتب التربية الإسلامية - الصف الثاني الابتدائي",
+        "description": "جميع كتب التربية الإسلامية للصف الثاني الابتدائي مع الشرح والتمارين مجاناً",
+        "url": "https://s3cond7ry.me/primary/grade2/religion/",
+        "mainEntity": {
+            "@type": "ItemList",
+            "numberOfItems": 2,
+            "itemListElement": [
+                {
+                    "@type": "Book",
+                    "position": 1,
+                    "name": "سلاح التلميذ في التربية الإسلامية",
+                    "description": "كتاب سلاح التلميذ للصف الثاني الابتدائي في التربية الإسلامية",
+                    "educationalLevel": "الصف الثاني الابتدائي",
+                    "inLanguage": "ar"
+                },
+                {
+                    "@type": "Book",
+                    "position": 2,
+                    "name": "قطر الندى في التربية الإسلامية",
+                    "description": "كتاب قطر الندى للصف الثاني الابتدائي في التربية الإسلامية",
+                    "educationalLevel": "الصف الثاني الابتدائي",
+                    "inLanguage": "ar"
+                }
+            ]
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "الرئيسية",
+                    "item": "https://s3cond7ry.me"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "المرحلة الابتدائية",
+                    "item": "https://s3cond7ry.me/primary/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "الصف الثاني الابتدائي",
+                    "item": "https://s3cond7ry.me/primary/grade2/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "التربية الإسلامية",
+                    "item": "https://s3cond7ry.me/primary/grade2/religion/"
+                }
+            ]
+        }
+    }
+    </script>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="subject-header">
+      <div class="breadcrumb">
+        <a href="../../../">الرئيسية</a>
+        <span class="separator">←</span>
+        <a href="../../">المرحلة الابتدائية</a>
+        <span class="separator">←</span>
+        <a href="../">الصف الثاني الابتدائي</a>
+        <span class="separator">←</span>
+        <span class="current">التربية الإسلامية</span>
+      </div>
+
+      <h1 class="subject-title">
+        <i class="fas fa-mosque"></i>
+        كتب التربية الإسلامية
+      </h1>
+      <p class="subject-description">
+        اكتشف مجموعة شاملة من كتب التربية الإسلامية للصف الثاني الابتدائي. تعلم القيم الإسلامية والأخلاق الحميدة من خلال
+        محتوى تعليمي متميز وتفاعلي يناسب المرحلة العمرية
+      </p>
+    </header>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number">2</span>
+          <span class="stat-label">كتاب متميز</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">12+</span>
+          <span class="stat-label">درس تفاعلي</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">80+</span>
+          <span class="stat-label">نشاط ديني</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">مجاني تماماً</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Books Grid -->
+    <section class="books-grid">
+      <div class="grid">
+        <!-- Book 1: سلاح التلميذ -->
+        <div class="book-card">
+          <div class="book-icon">
+            <i class="fas fa-sword"></i>
+          </div>
+          <h3 class="book-title">سلاح التلميذ</h3>
+          <p class="book-subtitle">التربية الإسلامية - الصف الثاني الابتدائي</p>
+          <div class="book-features">
+            <span class="feature-tag">شرح مبسط</span>
+            <span class="feature-tag">قصص إسلامية</span>
+            <span class="feature-tag">أنشطة تفاعلية</span>
+            <span class="feature-tag">قيم أخلاقية</span>
+          </div>
+          <a href="selah-telmeez/" class="book-button">
+            <i class="fas fa-book-open"></i>
+            تصفح الكتاب
+          </a>
+        </div>
+
+        <!-- Book 2: قطر الندى -->
+        <div class="book-card">
+          <div class="book-icon">
+            <i class="fas fa-droplet"></i>
+          </div>
+          <h3 class="book-title">قطر الندى</h3>
+          <p class="book-subtitle">التربية الإسلامية - الصف الثاني الابتدائي</p>
+          <div class="book-features">
+            <span class="feature-tag">محتوى غني</span>
+            <span class="feature-tag">تدريبات متنوعة</span>
+            <span class="feature-tag">آداب إسلامية</span>
+            <span class="feature-tag">تعليم تفاعلي</span>
+          </div>
+          <a href="qatar-elnada/" class="book-button">
+            <i class="fas fa-book-open"></i>
+            تصفح الكتاب
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+      <h2 class="features-title">
+        <i class="fas fa-star-and-crescent"></i>
+        مميزات كتب التربية الإسلامية
+      </h2>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-quran"></i>
+          </div>
+          <h3 class="feature-name">تعلم القرآن الكريم</h3>
+          <p class="feature-description">دروس مبسطة لتعليم القرآن الكريم والسور القصيرة بطريقة سهلة وممتعة</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3 class="feature-name">القيم الأخلاقية</h3>
+          <p class="feature-description">تنمية الأخلاق الحميدة والقيم الإسلامية من خلال القصص والأمثلة العملية</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-pray"></i>
+          </div>
+          <h3 class="feature-name">أركان الإسلام</h3>
+          <p class="feature-description">شرح مبسط لأركان الإسلام والعبادات بما يناسب المرحلة العمرية</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-book-heart"></i>
+          </div>
+          <h3 class="feature-name">القصص التربوية</h3>
+          <p class="feature-description">قصص من السيرة النبوية والتاريخ الإسلامي لتعزيز التعلم والفهم</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back to Grade Navigation -->
+    <div class="back-navigation">
+      <a href="../" class="back-button">
+        <i class="fas fa-arrow-right"></i>
+        العودة إلى الصف الثاني الابتدائي
+      </a>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../../../script.js"></script>
+  <script src="../../../scripts.js"></script>
+  <script src="../../../enhanced-features.css"></script>
+  <script>
+    // Enhanced scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all book cards
+    document.querySelectorAll('.book-card').forEach(card => {
+      observer.observe(card);
+    });
+
+    // Add loading states for better UX
+    document.addEventListener('DOMContentLoaded', function () {
+      const bookButtons = document.querySelectorAll('.book-button');
+
+      bookButtons.forEach(button => {
+        button.addEventListener('click', function (e) {
+          const originalText = this.innerHTML;
+          this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري التحميل...';
+          this.style.pointerEvents = 'none';
+
+          // Restore button after 2 seconds if navigation fails
+          setTimeout(() => {
+            this.innerHTML = originalText;
+            this.style.pointerEvents = 'auto';
+          }, 2000);
+        });
+      });
+    });
+
+    // Add religious-themed interactions
+    document.querySelectorAll('.stat-item').forEach(item => {
+      item.addEventListener('mouseenter', function () {
+        this.style.transform = 'translateY(-5px) scale(1.02)';
+      });
+
+      item.addEventListener('mouseleave', function () {
+        this.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+
+    // Enhanced Islamic theme effects
+    const islamicElements = document.querySelectorAll('.book-icon i');
+    islamicElements.forEach((element, index) => {
+      element.style.animationDelay = `${index * 0.2}s`;
+      element.style.animation = 'pulse 2s infinite ease-in-out';
+    });
+
+    // Add CSS for pulse animation
+    const style = document.createElement('style');
+    style.textContent = `
+            @keyframes pulse {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.1); }
+            }
+        `;
+    document.head.appendChild(style);
+  </script>
+</body>
+
+</html>
