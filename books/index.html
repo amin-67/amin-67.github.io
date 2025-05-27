@@ -1,389 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>فهرس الكتب - موقع المتميزون</title>
-  <meta name="description"
-    content="تصفح جميع الكتب الخارجية والمذكرات المتاحة في موقع المتميزون - كتب التفوق والأضواء والامتحان والإبداع">
-  <link rel="canonical" href="https://s3cond7ry.me/books/">
-
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9641790807112506"
-    crossorigin="anonymous"></script>
-
-  <!-- Import CSS from main site -->
-  <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="../ultra-performance.css">
-  <link rel="stylesheet" href="../compatibility-enhancements.css">
-
-  <!-- Schema.org for Book Collection -->
-  <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "name": "فهرس الكتب التعليمية",
-        "description": "مجموعة شاملة من الكتب الخارجية والمذكرات التعليمية لجميع المراحل الدراسية",
-        "url": "https://s3cond7ry.me/books/",
-        "mainEntity": {
-            "@type": "ItemList",
-            "name": "الكتب التعليمية المتاحة",
-            "itemListElement": [
-                {
-                    "@type": "Book",
-                    "name": "كتاب التفوق",
-                    "url": "https://s3cond7ry.me/books/kitab-altfawuq/",
-                    "description": "سلسلة كتب التفوق للمراحل التعليمية المختلفة"
-                },
-                {
-                    "@type": "Book", 
-                    "name": "كتاب الأضواء",
-                    "url": "https://s3cond7ry.me/books/kitab-aladwaa/",
-                    "description": "سلسلة كتب الأضواء التعليمية"
-                },
-                {
-                    "@type": "Book",
-                    "name": "كتاب الامتحان", 
-                    "url": "https://s3cond7ry.me/books/kitab-alemtehan/",
-                    "description": "سلسلة كتب الامتحان للمراجعة النهائية"
-                },
-                {
-                    "@type": "Book",
-                    "name": "كتاب الإبداع",
-                    "url": "https://s3cond7ry.me/books/kitab-alibdaa/", 
-                    "description": "سلسلة كتب الإبداع للطلاب المتميزين"
-                }
-            ]
-        },
-        "breadcrumb": {
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "الرئيسية",
-                    "item": "https://s3cond7ry.me/"
-                },
-                {
-                    "@type": "ListItem", 
-                    "position": 2,
-                    "name": "فهرس الكتب",
-                    "item": "https://s3cond7ry.me/books/"
-                }
-            ]
-        }
-    }
-    </script>
-</head>
-
-<body>
-  <header class="header">
-    <nav class="nav-container">
-      <div class="nav-brand">
-        <a href="/" class="brand-link">
-          <img src="../logo.svg" alt="المتميزون" class="brand-logo">
-          <span class="brand-text">المتميزون</span>
-        </a>
-      </div>
-
-      <div class="nav-menu">
-        <a href="/" class="nav-link">الرئيسية</a>
-        <a href="/books/" class="nav-link active">الكتب</a>
-        <a href="/subjects/" class="nav-link">المواد</a>
-        <a href="/grades/" class="nav-link">المراحل</a>
-      </div>
-    </nav>
-  </header>
-
-  <main class="main-content">
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb-nav" aria-label="مسار التنقل">
-      <ol class="breadcrumb-list">
-        <li class="breadcrumb-item">
-          <a href="/" class="breadcrumb-link">الرئيسية</a>
-        </li>
-        <li class="breadcrumb-item active">
-          <span class="breadcrumb-current">فهرس الكتب</span>
-        </li>
-      </ol>
-    </nav>
-
-    <section class="books-index-hero">
-      <div class="container">
-        <h1 class="page-title fade-in">📚 فهرس الكتب التعليمية</h1>
-        <p class="page-description fade-in">استعرض مجموعتنا الشاملة من الكتب الخارجية والمذكرات التعليمية لجميع المراحل
-          الدراسية</p>
-
-        <!-- Search Box -->
-        <div class="search-container fade-in">
-          <input type="text" class="search-input" placeholder="ابحث عن كتاب معين..." id="bookSearch">
-          <button class="search-btn" aria-label="بحث">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section class="books-grid-section">
-      <div class="container">
-        <h2 class="section-title">الكتب المتاحة</h2>
-
-        <div class="books-grid" id="booksGrid">
-          <!-- كتاب التفوق -->
-          <article class="book-card fade-in" data-book="تفوق">
-            <div class="book-image">
-              <img src="../images/books/tafawuq-cover.jpg" alt="كتاب التفوق" loading="lazy">
-              <div class="book-overlay">
-                <span class="book-badge">جديد</span>
-              </div>
-            </div>
-            <div class="book-content">
-              <h3 class="book-title">كتاب التفوق</h3>
-              <p class="book-description">سلسلة كتب التفوق الشاملة لجميع المواد والمراحل التعليمية مع شرح مفصل وتمارين
-                متنوعة</p>
-              <div class="book-meta">
-                <span class="book-subjects">🔥 جميع المواد</span>
-                <span class="book-grades">📖 جميع المراحل</span>
-              </div>
-              <div class="book-actions">
-                <a href="/books/kitab-altfawuq/" class="btn btn-primary">
-                  <i class="fas fa-book-open"></i>
-                  تصفح الكتاب
-                </a>
-                <button class="btn btn-secondary" onclick="addToFavorites('تفوق')">
-                  <i class="far fa-heart"></i>
-                  مفضلة
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- كتاب الأضواء -->
-          <article class="book-card fade-in" data-book="أضواء">
-            <div class="book-image">
-              <img src="../images/books/adwaa-cover.jpg" alt="كتاب الأضواء" loading="lazy">
-              <div class="book-overlay">
-                <span class="book-badge popular">الأكثر شعبية</span>
-              </div>
-            </div>
-            <div class="book-content">
-              <h3 class="book-title">كتاب الأضواء</h3>
-              <p class="book-description">سلسلة كتب الأضواء المميزة بأسلوب شرح واضح ومبسط مع أمثلة عملية وتطبيقات متنوعة
-              </p>
-              <div class="book-meta">
-                <span class="book-subjects">⭐ مواد أساسية</span>
-                <span class="book-grades">🎓 إعدادي وثانوي</span>
-              </div>
-              <div class="book-actions">
-                <a href="/books/kitab-aladwaa/" class="btn btn-primary">
-                  <i class="fas fa-book-open"></i>
-                  تصفح الكتاب
-                </a>
-                <button class="btn btn-secondary" onclick="addToFavorites('أضواء')">
-                  <i class="far fa-heart"></i>
-                  مفضلة
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Strategic Google Ad Section -->
-          <section class="ad-section-middle"
-            style="background: linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%); padding: 40px 0; text-align: center; border-radius: 15px; margin: 40px 0; border: 1px solid #e2e8f0;">
-            <div class="container">
-              <div
-                style="background: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border: 1px solid #e2e8f0; max-width: 800px; margin: 0 auto;">
-                <h3
-                  style="color: #4a5568; font-size: 1.4rem; margin-bottom: 20px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 10px;">
-                  <i class="fas fa-book-open" style="color: #667eea;"></i>
-                  اكتشف المزيد من الكتب المجانية
-                  <i class="fas fa-book-open" style="color: #667eea;"></i>
-                </h3>
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9641790807112506"
-                  data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-              </div>
-            </div>
-          </section>
-
-          <!-- كتاب الامتحان -->
-          <article class="book-card fade-in" data-book="امتحان">
-            <div class="book-image">
-              <img src="../images/books/emtehan-cover.jpg" alt="كتاب الامتحان" loading="lazy">
-              <div class="book-overlay">
-                <span class="book-badge review">مراجعة نهائية</span>
-              </div>
-            </div>
-            <div class="book-content">
-              <h3 class="book-title">كتاب الامتحان</h3>
-              <p class="book-description">كتب الامتحان المتخصصة في المراجعة النهائية وحل نماذج الامتحانات مع الإجابات
-                النموذجية</p>
-              <div class="book-meta">
-                <span class="book-subjects">📝 مراجعات نهائية</span>
-                <span class="book-grades">🏆 جميع المراحل</span>
-              </div>
-              <div class="book-actions">
-                <a href="/books/kitab-alemtehan/" class="btn btn-primary">
-                  <i class="fas fa-book-open"></i>
-                  تصفح الكتاب
-                </a>
-                <button class="btn btn-secondary" onclick="addToFavorites('امتحان')">
-                  <i class="far fa-heart"></i>
-                  مفضلة
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- كتاب الإبداع -->
-          <article class="book-card fade-in" data-book="إبداع">
-            <div class="book-image">
-              <img src="../images/books/ibdaa-cover.jpg" alt="كتاب الإبداع" loading="lazy">
-              <div class="book-overlay">
-                <span class="book-badge premium">متميز</span>
-              </div>
-            </div>
-            <div class="book-content">
-              <h3 class="book-title">كتاب الإبداع</h3>
-              <p class="book-description">سلسلة كتب الإبداع للطلاب المتميزين مع مسائل متقدمة وطرق حل إبداعية</p>
-              <div class="book-meta">
-                <span class="book-subjects">🧠 تفكير متقدم</span>
-                <span class="book-grades">🌟 للمتميزين</span>
-              </div>
-              <div class="book-actions">
-                <a href="/books/kitab-alibdaa/" class="btn btn-primary">
-                  <i class="fas fa-book-open"></i>
-                  تصفح الكتاب
-                </a>
-                <button class="btn btn-secondary" onclick="addToFavorites('إبداع')">
-                  <i class="far fa-heart"></i>
-                  مفضلة
-                </button>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="books-stats-section">
-      <div class="container">
-        <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-icon">📚</div>
-            <div class="stat-number">150+</div>
-            <div class="stat-label">كتاب متاح</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon">📖</div>
-            <div class="stat-number">25+</div>
-            <div class="stat-label">مادة دراسية</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon">🎓</div>
-            <div class="stat-number">12</div>
-            <div class="stat-label">صف دراسي</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon">⭐</div>
-            <div class="stat-number">50K+</div>
-            <div class="stat-label">طالب مستفيد</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Final Google Ad Section -->
-    <section class="ad-section-final"
-      style="background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); padding: 50px 0; text-align: center; border-top: 2px solid #e2e8f0; margin-top: 40px;">
-      <div class="container">
-        <div
-          style="background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 40px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); border: 2px solid rgba(255, 255, 255, 0.8); max-width: 900px; margin: 0 auto; backdrop-filter: blur(10px);">
-          <h3
-            style="color: #4a5568; font-size: 1.5rem; margin-bottom: 25px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px;">
-            <i class="fas fa-star" style="color: #f6ad55;"></i>
-            احصل على أفضل الكتب التعليمية
-            <i class="fas fa-star" style="color: #f6ad55;"></i>
-          </h3>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9641790807112506"
-            data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>روابط سريعة</h3>
-          <ul class="footer-links">
-            <li><a href="/">الرئيسية</a></li>
-            <li><a href="/books/">الكتب</a></li>
-            <li><a href="/subjects/">المواد</a></li>
-            <li><a href="/grades/">المراحل</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>تواصل معنا</h3>
-          <p>© 2025 موقع المتميزون - جميع الحقوق محفوظة</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Floating Action Buttons -->
-  <button class="floating-search-btn" aria-label="بحث متقدم" title="البحث المتقدم (Alt+S)">
-    <i class="fas fa-search"></i>
-  </button>
-
-  <button class="scroll-to-top" aria-label="العودة لأعلى" title="العودة لأعلى">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-
-  <!-- Scripts -->
-  <script src="../ultra-enhanced.js"></script>
-  <script>
-    // Book-specific functionality
-    function addToFavorites(bookName) {
-      console.log(`تم إضافة كتاب ${bookName} للمفضلة`);
-      if (window.ultraEnhancedWebsite) {
-        window.ultraEnhancedWebsite.showNotification(`تم إضافة كتاب ${bookName} للمفضلة`, 'success');
-      }
-    }
-
-    // Search functionality
-    document.addEventListener('DOMContentLoaded', function () {
-      const searchInput = document.getElementById('bookSearch');
-      const booksGrid = document.getElementById('booksGrid');
-
-      if (searchInput) {
-        searchInput.addEventListener('input', function (e) {
-          const searchTerm = e.target.value.toLowerCase();
-          const bookCards = booksGrid.querySelectorAll('.book-card');
-
-          bookCards.forEach(card => {
-            const bookData = card.getAttribute('data-book').toLowerCase();
-            const bookTitle = card.querySelector('.book-title').textContent.toLowerCase();
-            const bookDesc = card.querySelector('.book-description').textContent.toLowerCase();
-
-            if (bookData.includes(searchTerm) ||
-              bookTitle.includes(searchTerm) ||
-              bookDesc.includes(searchTerm)) {
-              card.style.display = 'block';
-              card.classList.add('search-match');
-            } else {
-              card.style.display = 'none';
-              card.classList.remove('search-match');
-            }
-          });
-        });
-      }
-    });
-  </script>
-</body>
-
-</html>
