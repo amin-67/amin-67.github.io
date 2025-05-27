@@ -1,461 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>فهرس المواد الدراسية - موقع المتميزون</title>
-  <meta name="description"
-    content="استعرض جميع المواد الدراسية المتاحة في موقع المتميزون لجميع المراحل التعليمية - اللغة العربية، الرياضيات، العلوم وأكثر">
-  <link rel="canonical" href="https://s3cond7ry.me/subjects/">
-
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9641790807112506"
-    crossorigin="anonymous"></script>
-
-  <!-- Import CSS from main site -->
-  <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="../ultra-performance.css">
-  <link rel="stylesheet" href="../compatibility-enhancements.css">
-
-  <!-- Schema.org for Subjects Collection -->
-  <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "name": "فهرس المواد الدراسية",
-        "description": "مجموعة شاملة من المواد الدراسية لجميع المراحل التعليمية",
-        "url": "https://s3cond7ry.me/subjects/",
-        "mainEntity": {
-            "@type": "ItemList",
-            "name": "المواد الدراسية المتاحة",
-            "itemListElement": [
-                {
-                    "@type": "Course",
-                    "name": "اللغة العربية",
-                    "url": "https://s3cond7ry.me/subjects/arabic/",
-                    "description": "دروس وتمارين اللغة العربية"
-                },
-                {
-                    "@type": "Course", 
-                    "name": "الرياضيات",
-                    "url": "https://s3cond7ry.me/subjects/math/",
-                    "description": "دروس وحلول الرياضيات"
-                },
-                {
-                    "@type": "Course",
-                    "name": "اللغة الإنجليزية",
-                    "url": "https://s3cond7ry.me/subjects/english/",
-                    "description": "دروس وتمارين اللغة الإنجليزية"
-                }
-            ]
-        },
-        "breadcrumb": {
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "الرئيسية",
-                    "item": "https://s3cond7ry.me/"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": "فهرس المواد"
-                }
-            ]
-        }
-    }
-    </script>
-</head>
-
-<body>
-  <header class="main-header">
-    <nav class="navbar container">
-      <div class="nav-brand">
-        <a href="/" class="brand-link">
-          <img src="../logo.svg" alt="شعار المتميزون" class="brand-logo">
-          <span class="brand-text">المتميزون</span>
-        </a>
-      </div>
-
-      <ul class="nav-menu">
-        <li><a href="/">الرئيسية</a></li>
-        <li><a href="/books/">الكتب</a></li>
-        <li><a href="/subjects/" class="active">المواد</a></li>
-        <li><a href="/grades/">الصفوف</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="main-content">
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb-nav">
-      <div class="container">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="/">
-              <i class="fas fa-home"></i>
-              الرئيسية
-            </a>
-          </li>
-          <li class="breadcrumb-item active">
-            <span class="breadcrumb-current">فهرس المواد</span>
-          </li>
-        </ol>
-      </div>
-    </nav>
-
-    <section class="subjects-index-hero">
-      <div class="container">
-        <h1 class="page-title fade-in">📚 فهرس المواد الدراسية</h1>
-        <p class="page-description fade-in">اختر المادة التي تريد دراستها واستعرض جميع الموارد التعليمية المتاحة لها</p>
-
-        <!-- Search Box -->
-        <div class="search-container fade-in">
-          <input type="text" class="search-input" placeholder="ابحث عن مادة دراسية..." id="subjectSearch">
-          <button class="search-btn" aria-label="بحث">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section class="subjects-grid-section">
-      <div class="container">
-        <h2 class="section-title">المواد الدراسية</h2>
-
-        <div class="subjects-grid" id="subjectsGrid">
-          <!-- اللغة العربية -->
-          <article class="subject-card fade-in" data-subject="عربي">
-            <div class="subject-icon">
-              <i class="fas fa-language text-primary"></i>
-            </div>
-            <div class="subject-content">
-              <h3 class="subject-title">اللغة العربية</h3>
-              <p class="subject-description">النحو والصرف والبلاغة والأدب والنصوص الأدبية لجميع المراحل التعليمية</p>
-              <div class="subject-stats">
-                <span class="stat-item">
-                  <i class="fas fa-book"></i>
-                  <span>25 درس</span>
-                </span>
-                <span class="stat-item">
-                  <i class="fas fa-users"></i>
-                  <span>12,000 طالب</span>
-                </span>
-              </div>
-              <div class="subject-actions">
-                <a href="/subjects/arabic/" class="btn btn-primary">
-                  <i class="fas fa-arrow-left"></i>
-                  دخول المادة
-                </a>
-                <button class="btn btn-outline" onclick="addToFavorites('arabic')">
-                  <i class="far fa-heart"></i>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- الرياضيات -->
-          <article class="subject-card fade-in" data-subject="رياضيات">
-            <div class="subject-icon">
-              <i class="fas fa-calculator text-success"></i>
-            </div>
-            <div class="subject-content">
-              <h3 class="subject-title">الرياضيات</h3>
-              <p class="subject-description">الحساب والجبر والهندسة والإحصاء مع أمثلة محلولة وتمارين متدرجة</p>
-              <div class="subject-stats">
-                <span class="stat-item">
-                  <i class="fas fa-book"></i>
-                  <span>30 درس</span>
-                </span>
-                <span class="stat-item">
-                  <i class="fas fa-users"></i>
-                  <span>15,000 طالب</span>
-                </span>
-              </div>
-              <div class="subject-actions">
-                <a href="/subjects/math/" class="btn btn-primary">
-                  <i class="fas fa-arrow-left"></i>
-                  دخول المادة
-                </a>
-                <button class="btn btn-outline" onclick="addToFavorites('math')">
-                  <i class="far fa-heart"></i>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- اللغة الإنجليزية -->
-          <article class="subject-card fade-in" data-subject="انجليزي">
-            <div class="subject-icon">
-              <i class="fas fa-globe text-info"></i>
-            </div>
-            <div class="subject-content">
-              <h3 class="subject-title">اللغة الإنجليزية</h3>
-              <p class="subject-description">القواعد والمفردات والمحادثة والقراءة مع تدريبات تفاعلية</p>
-              <div class="subject-stats">
-                <span class="stat-item">
-                  <i class="fas fa-book"></i>
-                  <span>20 درس</span>
-                </span>
-                <span class="stat-item">
-                  <i class="fas fa-users"></i>
-                  <span>10,000 طالب</span>
-                </span>
-              </div>
-              <div class="subject-actions">
-                <a href="/subjects/english/" class="btn btn-primary">
-                  <i class="fas fa-arrow-left"></i>
-                  دخول المادة
-                </a>
-                <button class="btn btn-outline" onclick="addToFavorites('english')">
-                  <i class="far fa-heart"></i>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- العلوم -->
-          <article class="subject-card fade-in" data-subject="علوم">
-            <div class="subject-icon">
-              <i class="fas fa-flask text-warning"></i>
-            </div>
-            <div class="subject-content">
-              <h3 class="subject-title">العلوم</h3>
-              <p class="subject-description">الفيزياء والكيمياء والأحياء مع تجارب عملية ومشاهدات علمية</p>
-              <div class="subject-stats">
-                <span class="stat-item">
-                  <i class="fas fa-book"></i>
-                  <span>28 درس</span>
-                </span>
-                <span class="stat-item">
-                  <i class="fas fa-users"></i>
-                  <span>11,000 طالب</span>
-                </span>
-              </div>
-              <div class="subject-actions">
-                <a href="/subjects/science/" class="btn btn-primary">
-                  <i class="fas fa-arrow-left"></i>
-                  دخول المادة
-                </a>
-                <button class="btn btn-outline" onclick="addToFavorites('science')">
-                  <i class="far fa-heart"></i>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- الدراسات الاجتماعية -->
-          <article class="subject-card fade-in" data-subject="دراسات">
-            <div class="subject-icon">
-              <i class="fas fa-map text-danger"></i>
-            </div>
-            <div class="subject-content">
-              <h3 class="subject-title">الدراسات الاجتماعية</h3>
-              <p class="subject-description">التاريخ والجغرافيا والتربية الوطنية بأسلوب شيق وممتع</p>
-              <div class="subject-stats">
-                <span class="stat-item">
-                  <i class="fas fa-book"></i>
-                  <span>22 درس</span>
-                </span>
-                <span class="stat-item">
-                  <i class="fas fa-users"></i>
-                  <span>8,000 طالب</span>
-                </span>
-              </div>
-              <div class="subject-actions">
-                <a href="/subjects/social-studies/" class="btn btn-primary">
-                  <i class="fas fa-arrow-left"></i>
-                  دخول المادة
-                </a>
-                <button class="btn btn-outline" onclick="addToFavorites('social-studies')">
-                  <i class="far fa-heart"></i>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- التربية الدينية -->
-          <article class="subject-card fade-in" data-subject="دين">
-            <div class="subject-icon">
-              <i class="fas fa-heart text-secondary"></i>
-            </div>
-            <div class="subject-content">
-              <h3 class="subject-title">التربية الدينية</h3>
-              <p class="subject-description">القيم الأخلاقية والتعاليم الدينية والسيرة النبوية الشريفة</p>
-              <div class="subject-stats">
-                <span class="stat-item">
-                  <i class="fas fa-book"></i>
-                  <span>18 درس</span>
-                </span>
-                <span class="stat-item">
-                  <i class="fas fa-users"></i>
-                  <span>9,000 طالب</span>
-                </span>
-              </div>
-              <div class="subject-actions">
-                <a href="/subjects/religion/" class="btn btn-primary">
-                  <i class="fas fa-arrow-left"></i>
-                  دخول المادة
-                </a>
-                <button class="btn btn-outline" onclick="addToFavorites('religion')">
-                  <i class="far fa-heart"></i>
-                </button>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- Strategic Google Ad Section -->
-        <section class="ad-section-middle"
-          style="background: linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%); padding: 40px 0; text-align: center; border-radius: 15px; margin: 40px 0; border: 1px solid #e2e8f0;">
-          <div class="container">
-            <div
-              style="background: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border: 1px solid #e2e8f0; max-width: 800px; margin: 0 auto;">
-              <h3
-                style="color: #4a5568; font-size: 1.4rem; margin-bottom: 20px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 10px;">
-                <i class="fas fa-graduation-cap" style="color: #667eea;"></i>
-                مصادر تعليمية إضافية مجانية
-                <i class="fas fa-graduation-cap" style="color: #667eea;"></i>
-              </h3>
-              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9641790807112506"
-                data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
-              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-            </div>
-          </div>
-        </section>
-
-        <div class="subjects-grid">
-
-          <!-- Statistics Section -->
-          <section class="subjects-stats">
-            <div class="container">
-              <h3 class="section-title">إحصائيات المواد</h3>
-              <div class="stats-grid">
-                <div class="stat-card">
-                  <div class="stat-icon">
-                    <i class="fas fa-book-open text-primary"></i>
-                  </div>
-                  <div class="stat-content">
-                    <h4 class="stat-number">143</h4>
-                    <p class="stat-label">درس متاح</p>
-                  </div>
-                </div>
-                <div class="stat-card">
-                  <div class="stat-icon">
-                    <i class="fas fa-users text-success"></i>
-                  </div>
-                  <div class="stat-content">
-                    <h4 class="stat-number">65,000+</h4>
-                    <p class="stat-label">طالب مسجل</p>
-                  </div>
-                </div>
-                <div class="stat-card">
-                  <div class="stat-icon">
-                    <i class="fas fa-download text-warning"></i>
-                  </div>
-                  <div class="stat-content">
-                    <h4 class="stat-number">200,000+</h4>
-                    <p class="stat-label">تحميل شهري</p>
-                  </div>
-                </div>
-                <div class="stat-card">
-                  <div class="stat-icon">
-                    <i class="fas fa-star text-info"></i>
-                  </div>
-                  <div class="stat-content">
-                    <h4 class="stat-number">4.8</h4>
-                    <p class="stat-label">تقييم متوسط</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Final Google Ad Section -->
-          <section class="ad-section-final"
-            style="background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); padding: 50px 0; text-align: center; border-top: 2px solid #e2e8f0; margin-top: 40px;">
-            <div class="container">
-              <div
-                style="background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 40px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); border: 2px solid rgba(255, 255, 255, 0.8); max-width: 900px; margin: 0 auto; backdrop-filter: blur(10px);">
-                <h3
-                  style="color: #4a5568; font-size: 1.5rem; margin-bottom: 25px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px;">
-                  <i class="fas fa-star" style="color: #f6ad55;"></i>
-                  ابدأ رحلتك التعليمية الآن
-                  <i class="fas fa-star" style="color: #f6ad55;"></i>
-                </h3>
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9641790807112506"
-                  data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-              </div>
-            </div>
-          </section>
-  </main>
-
-  <footer class="main-footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>موقع المتميزون</h4>
-          <p>منصة تعليمية مجانية لجميع طلاب مصر</p>
-        </div>
-        <div class="footer-section">
-          <h4>روابط مهمة</h4>
-          <ul>
-            <li><a href="/">الرئيسية</a></li>
-            <li><a href="/books/">الكتب</a></li>
-            <li><a href="/subjects/">المواد</a></li>
-            <li><a href="/grades/">الصفوف</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 موقع المتميزون - جميع الحقوق محفوظة</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Import JavaScript -->
-  <script src="../ultra-enhanced.js"></script>
-  <script>
-    // Subject search functionality
-    document.getElementById('subjectSearch').addEventListener('input', function (e) {
-      const searchTerm = e.target.value.toLowerCase();
-      const subjectCards = document.querySelectorAll('.subject-card');
-
-      subjectCards.forEach(card => {
-        const subjectName = card.getAttribute('data-subject').toLowerCase();
-        const subjectTitle = card.querySelector('.subject-title').textContent.toLowerCase();
-        const subjectDesc = card.querySelector('.subject-description').textContent.toLowerCase();
-
-        if (subjectName.includes(searchTerm) ||
-          subjectTitle.includes(searchTerm) ||
-          subjectDesc.includes(searchTerm)) {
-          card.style.display = 'block';
-          card.classList.add('fade-in');
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-
-    // Add to favorites functionality
-    function addToFavorites(subjectId) {
-      // Add subject to favorites logic here
-      const subjectNames = {
-        'arabic': 'اللغة العربية',
-        'math': 'الرياضيات',
-        'english': 'اللغة الإنجليزية',
-        'science': 'العلوم',
-        'social-studies': 'الدراسات الاجتماعية',
-        'religion': 'التربية الدينية'
-      };
-
-      alert(`تم إضافة ${subjectNames[subjectId]} إلى المفضلة!`);
-    }
-  </script>
-</body>
-
-</html>
