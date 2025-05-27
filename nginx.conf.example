@@ -1,0 +1,40 @@
+# Nginx configuration for fixing directory listing issue
+# Add this to your nginx.conf or site configuration
+
+server {
+    listen 80;
+    server_name your-domain.com;
+    root /path/to/website;
+    
+    # Default index files
+    index index.html index.htm;
+    
+    # Disable directory listing
+    autoindex off;
+    
+    # Try files in order: exact file, directory with trailing slash, then index.html
+    location / {
+        try_files $uri $uri/ $uri/index.html =404;
+    }
+    
+    # Specific rule for directories without trailing slash
+    location ~ ^(.+)(?<!/)$ {
+        try_files $uri $uri/ $uri/index.html @add_trailing_slash;
+    }
+    
+    # Add trailing slash if directory exists
+    location @add_trailing_slash {
+        return 301 $uri/;
+    }
+    
+    # Security headers
+    add_header X-Content-Type-Options nosniff;
+    add_header X-Frame-Options DENY;
+    add_header X-XSS-Protection "1; mode=block";
+    
+    # Cache static files
+    location ~* \.(css|js|png|jpg|jpeg|gif|ico|svg)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+}

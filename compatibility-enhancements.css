@@ -1,0 +1,474 @@
+/* ==================================================
+   تحسينات التوافق مع النظام الحالي
+   Compatibility Enhancements
+   ================================================== */
+
+/* ===== ENHANCED FLOATING BUTTONS COMPATIBILITY ===== */
+/* دعم الفئات الموجودة في النظام الحالي */
+.enhanced-search-btn,
+.floating-search-btn {
+    position: fixed !important;
+    bottom: 160px !important;
+    right: 25px !important;
+    z-index: 9999 !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 50% !important;
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 24px !important;
+    cursor: pointer !important;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    backdrop-filter: blur(10px) !important;
+    transform: translateY(0) !important;
+    animation: floatSearch 3s ease-in-out infinite !important;
+}
+
+.enhanced-search-btn:hover,
+.floating-search-btn:hover {
+    transform: translateY(-3px) scale(1.1) !important;
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.6) !important;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+}
+
+.enhanced-search-btn:active,
+.floating-search-btn:active {
+    transform: translateY(-1px) scale(1.05) !important;
+}
+
+.enhanced-search-btn i,
+.floating-search-btn i {
+    font-size: 20px !important;
+    transition: transform 0.3s ease !important;
+}
+
+.enhanced-search-btn:hover i,
+.floating-search-btn:hover i {
+    transform: rotate(15deg) scale(1.2) !important;
+}
+
+/* زر العودة لأعلى - دعم الفئات المتعددة */
+.back-to-top,
+.scroll-to-top,
+.scroll-top-btn {
+    position: fixed !important;
+    bottom: 90px !important; /* أسفل من زر البحث المتقدم */
+    right: 25px !important;
+    z-index: 9998 !important;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 50% !important;
+    width: 55px !important;
+    height: 55px !important;
+    font-size: 20px !important;
+    cursor: pointer !important;
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(20px) !important;
+    backdrop-filter: blur(10px) !important;
+    animation: floatBackToTop 4s ease-in-out infinite !important;
+}
+
+.back-to-top.visible,
+.back-to-top.show,
+.scroll-to-top.visible,
+.scroll-to-top.show,
+.scroll-top-btn.visible,
+.scroll-top-btn.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+.back-to-top:hover,
+.scroll-to-top:hover,
+.scroll-top-btn:hover {
+    transform: translateY(-3px) scale(1.1) !important;
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.6) !important;
+    background: linear-gradient(135deg, #ee5a24 0%, #ff6b6b 100%) !important;
+}
+
+.back-to-top:active,
+.scroll-to-top:active,
+.scroll-top-btn:active {
+    transform: translateY(-1px) scale(1.05) !important;
+}
+
+.back-to-top i,
+.scroll-to-top i,
+.scroll-top-btn i {
+    transition: transform 0.3s ease !important;
+}
+
+.back-to-top:hover i,
+.scroll-to-top:hover i,
+.scroll-top-btn:hover i {
+    transform: translateY(-2px) !important;
+}
+
+/* حركات عائمة للأزرار */
+@keyframes floatSearch {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-8px) rotate(1deg); }
+    50% { transform: translateY(-5px) rotate(0deg); }
+    75% { transform: translateY(-10px) rotate(-1deg); }
+}
+
+@keyframes floatBackToTop {
+    0%, 100% { transform: translateY(0px); }
+    33% { transform: translateY(-6px); }
+    66% { transform: translateY(-3px); }
+}
+
+/* ===== SEARCH MODAL COMPATIBILITY ===== */
+#enhanced-search-modal,
+.search-modal,
+.advanced-search-modal {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(5px) !important;
+    z-index: 10000 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.3s ease !important;
+}
+
+#enhanced-search-modal.active,
+.search-modal.active,
+.advanced-search-modal.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.search-modal-content,
+.modal-content,
+.enhanced-search-content {
+    background: white !important;
+    border-radius: 20px !important;
+    max-width: 900px !important;
+    width: 90% !important;
+    max-height: 80vh !important;
+    overflow: hidden !important;
+    transform: scale(0.8) translateY(-50px) !important;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3) !important;
+}
+
+#enhanced-search-modal.active .search-modal-content,
+.search-modal.active .modal-content,
+.advanced-search-modal.active .enhanced-search-content {
+    transform: scale(1) translateY(0) !important;
+}
+
+/* ===== COMPATIBILITY WITH EXISTING CLASSES ===== */
+/* تحسين الأزرار الموجودة */
+.btn, 
+.button,
+.download-btn,
+.primary-btn {
+    position: relative !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+    outline: none !important;
+    cursor: pointer !important;
+}
+
+.btn::before,
+.button::before,
+.download-btn::before,
+.primary-btn::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    transition: all 0.5s ease !important;
+    z-index: 0 !important;
+}
+
+.btn:hover::before,
+.button:hover::before,
+.download-btn:hover::before,
+.primary-btn:hover::before {
+    width: 300px !important;
+    height: 300px !important;
+}
+
+/* تحسين البطاقات الموجودة */
+.card,
+.result-item,
+.subject-card,
+.book-card {
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important;
+    transform-style: preserve-3d !important;
+    backface-visibility: hidden !important;
+}
+
+.card:hover,
+.result-item:hover,
+.subject-card:hover,
+.book-card:hover {
+    transform: translateY(-8px) rotateX(5deg) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* تحسين حقول البحث الموجودة */
+.search-box,
+.search-input,
+#main-search-input,
+.enhanced-search-input {
+    transition: all 0.3s ease !important;
+    border-radius: 25px !important;
+    position: relative !important;
+}
+
+.search-box:focus-within,
+.search-input:focus,
+#main-search-input:focus,
+.enhanced-search-input:focus {
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3) !important;
+    border-color: #667eea !important;
+}
+
+/* تحسين الشريط العلوي */
+header,
+.header,
+.main-header {
+    backdrop-filter: blur(15px) !important;
+    transition: all 0.3s ease !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+}
+
+header.scrolled,
+.header.scrolled,
+.main-header.scrolled {
+    background: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* ===== RESPONSIVE COMPATIBILITY ===== */
+@media (max-width: 768px) {
+    .enhanced-search-btn,
+    .floating-search-btn {
+        bottom: 140px !important;
+        right: 20px !important;
+        width: 55px !important;
+        height: 55px !important;
+        font-size: 20px !important;
+    }
+    
+    .back-to-top,
+    .scroll-to-top,
+    .scroll-top-btn {
+        bottom: 80px !important;
+        right: 20px !important;
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 18px !important;
+    }
+    
+    .search-modal-content,
+    .modal-content,
+    .enhanced-search-content {
+        width: 95% !important;
+        margin: 10px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .enhanced-search-btn,
+    .floating-search-btn {
+        bottom: 120px !important;
+        right: 15px !important;
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 18px !important;
+    }
+    
+    .back-to-top,
+    .scroll-to-top,
+    .scroll-top-btn {
+        bottom: 70px !important;
+        right: 15px !important;
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 16px !important;
+    }
+}
+
+/* ===== ANIMATION COMPATIBILITY ===== */
+/* دعم الحركات الموجودة */
+.fade-in,
+.fadeIn,
+.animate-fade-in {
+    opacity: 0 !important;
+    transform: translateY(30px) !important;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.fade-in.visible,
+.fade-in.active,
+.fadeIn.visible,
+.fadeIn.active,
+.animate-fade-in.visible,
+.animate-fade-in.active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.slide-in-left,
+.slideInLeft {
+    opacity: 0 !important;
+    transform: translateX(-50px) !important;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.slide-in-left.visible,
+.slide-in-left.active,
+.slideInLeft.visible,
+.slideInLeft.active {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+.slide-in-right,
+.slideInRight {
+    opacity: 0 !important;
+    transform: translateX(50px) !important;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.slide-in-right.visible,
+.slide-in-right.active,
+.slideInRight.visible,
+.slideInRight.active {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+.scale-in,
+.scaleIn {
+    opacity: 0 !important;
+    transform: scale(0.8) !important;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+}
+
+.scale-in.visible,
+.scale-in.active,
+.scaleIn.visible,
+.scaleIn.active {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+/* تحسينات الأداء للعناصر المحسنة */
+.enhanced-search-btn,
+.floating-search-btn,
+.back-to-top,
+.scroll-to-top,
+.card,
+.btn {
+    will-change: transform !important;
+}
+
+/* تحسين التمرير */
+html {
+    scroll-padding-top: 80px !important;
+}
+
+/* تحسينات التحميل الكسول */
+.lazy-image,
+.lazy-load {
+    transition: opacity 0.3s ease !important;
+    opacity: 0 !important;
+}
+
+.lazy-image.loaded,
+.lazy-load.loaded {
+    opacity: 1 !important;
+}
+
+/* ===== DARK MODE COMPATIBILITY ===== */
+@media (prefers-color-scheme: dark) {
+    .search-modal-content,
+    .modal-content,
+    .enhanced-search-content {
+        background: #1a1a1a !important;
+        color: white !important;
+    }
+    
+    .notification {
+        background: rgba(30, 30, 30, 0.95) !important;
+    }
+}
+
+/* ===== REDUCED MOTION COMPATIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .enhanced-search-btn,
+    .floating-search-btn,
+    .back-to-top,
+    .scroll-to-top {
+        animation: none !important;
+    }
+}
+
+/* ===== ACCESSIBILITY ENHANCEMENTS ===== */
+.enhanced-search-btn:focus,
+.floating-search-btn:focus,
+.back-to-top:focus,
+.scroll-to-top:focus {
+    outline: 3px solid #667eea !important;
+    outline-offset: 2px !important;
+}
+
+/* تحسين التباين للنصوص */
+.high-contrast {
+    filter: contrast(150%) !important;
+}
+
+/* دعم القارئات الشاشة */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
