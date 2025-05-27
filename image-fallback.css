@@ -1,0 +1,73 @@
+/* Fallback for missing book images */
+.book-image-fallback {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.book-image-fallback::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1' fill-rule='nonzero'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+}
+
+.book-image-fallback .fallback-text {
+    position: relative;
+    z-index: 1;
+    padding: 1rem;
+}
+
+/* Subject-specific fallback colors */
+.arabic-fallback {
+    background: linear-gradient(135deg, #2d5a87 0%, #1e3a5f 100%);
+}
+
+.math-fallback {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.english-fallback {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.religion-fallback {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.discover-fallback {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.science-fallback {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.social-fallback {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+/* Auto fallback for missing images */
+img[src*="arabic"]:not([src*="."]) {
+    display: none;
+}
+
+.book-card img[src*="arabic"]:not([src*="."]) + .book-image-fallback {
+    display: flex;
+}
+
+/* JavaScript will handle image error fallbacks */

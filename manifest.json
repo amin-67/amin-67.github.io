@@ -1,0 +1,102 @@
+{
+  "name": "تحميل كتب سلاح التلميذ والأضواء PDF مجانا",
+  "short_name": "كتب مجانية",
+  "description": "تحميل كتب سلاح التلميذ والأضواء وقطر الندى PDF 2025 مجانا لجميع المراحل التعليمية. المنهج الجديد جاهز للطباعة",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3498db",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "ar",
+  "dir": "rtl",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "البحث",
+      "short_name": "البحث",
+      "description": "البحث في المواد التعليمية",
+      "url": "/?action=search",
+      "icons": [
+        {
+          "src": "/favicon.svg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "المرحلة الابتدائية",
+      "short_name": "ابتدائي",
+      "description": "مواد المرحلة الابتدائية",
+      "url": "/primary/",
+      "icons": [
+        {
+          "src": "/favicon.svg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "المرحلة الإعدادية",
+      "short_name": "إعدادي",
+      "description": "مواد المرحلة الإعدادية",
+      "url": "/preparatory/",
+      "icons": [
+        {
+          "src": "/favicon.svg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "المرحلة الثانوية",
+      "short_name": "ثانوي",
+      "description": "مواد المرحلة الثانوية",
+      "url": "/secondary/",
+      "icons": [
+        {
+          "src": "/favicon.svg",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "الصفحة الرئيسية للموقع"
+    },
+    {
+      "src": "/images/screenshot-mobile.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "واجهة الهاتف المحمول"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-new"
+  }
+}
