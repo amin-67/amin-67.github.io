@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اكتشف - الصف الأول الابتدائي | كتب ومذكرات</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="كتب ومذكرات مادة اكتشف للصف الأول الابتدائي. تحميل مذكرات وملخصات وتدريبات مجانية">
+  <meta name="keywords" content="اكتشف, الصف الأول, ابتدائي, كتب, مذكرات, تحميل, مجاني">
+  <meta name="author" content="موقع الكتب التعليمية">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="اكتشف - الصف الأول الابتدائي">
+  <meta property="og:description" content="كتب ومذكرات مادة اكتشف للصف الأول الابتدائي">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/primary/grade1/discover/">
+
+  <!-- Performance Optimizations -->
+  <link rel="preload" href="../../../styles.css" as="style">
+  <link rel="preload" href="../../../performance.css" as="style">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../performance.css">
+  <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+  <!-- Critical CSS for faster rendering -->
+  <style>
+    .subject-page {
+      min-height: 50vh;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 1rem;
+    }
+
+    .hero-description {
+      font-size: 1rem;
+      opacity: 0.8;
+      max-width: 500px;
+    }
+
+    .subject-icon {
+      font-size: 4rem;
+      width: 120px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .science-section {
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .science-section h2 {
+      margin-bottom: 2rem;
+      color: #065f46;
+    }
+
+    .science-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .science-card {
+      background: white;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .science-card:hover {
+      border-color: #10b981;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
+    }
+
+    .science-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .science-card h3 {
+      color: #065f46;
+      margin-bottom: 0.5rem;
+    }
+
+    .science-card p {
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
+
+    .stats-section {
+      background: #f0fdf4;
+      padding: 2rem 1rem;
+      margin: 2rem 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #10b981;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: #6b7280;
+      font-size: 1rem;
+    }
+
+    .books-section {
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .books-section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #065f46;
+    }
+
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .book-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .book-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .discover-cover {
+      background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .book-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .book-subtitle {
+      font-size: 1rem;
+      opacity: 0.9;
+      margin-bottom: 1rem;
+    }
+
+    .book-decoration {
+      font-size: 2rem;
+      margin-top: 1rem;
+    }
+
+    .book-info {
+      padding: 1.5rem;
+    }
+
+    .book-info h3 {
+      color: #065f46;
+      margin-bottom: 1rem;
+    }
+
+    .book-info p {
+      color: #6b7280;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .book-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature {
+      background: #ecfdf5;
+      color: #065f46;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+
+    .activities-section {
+      background: #f0fdf4;
+      padding: 2rem 1rem;
+      margin: 2rem 0;
+    }
+
+    .activities-section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #065f46;
+    }
+
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .activity-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .activity-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .activity-card h3 {
+      color: #065f46;
+      margin-bottom: 1rem;
+    }
+
+    .activity-card p {
+      color: #6b7280;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+
+      .science-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="../../../index.html">
+          <img src="../../../logo.svg" alt="شعار الموقع">
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="../../../index.html">الرئيسية</a>
+        <a href="../../index.html">المرحلة الابتدائية</a>
+        <a href="../index.html">الصف الأول</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="../../../index.html">الرئيسية</a> >
+    <a href="../../index.html">المرحلة الابتدائية</a> >
+    <a href="../index.html">الصف الأول الابتدائي</a> >
+    <span>اكتشف</span>
+  </div>
+
+  <!-- Main Content -->
+  <main class="subject-page">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>اكتشف</h1>
+          <p class="hero-subtitle">الصف الأول الابتدائي</p>
+          <p class="hero-description">استكشف العالم من حولك واكتشف أسرار الطبيعة والعلوم بطريقة ممتعة</p>
+        </div>
+        <div class="hero-icon">
+          <div class="subject-icon discover-icon">🔬</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Science Section -->
+    <section class="science-section">
+      <h2>أنشطة الاستكشاف</h2>
+      <div class="science-grid">
+        <div class="science-card" data-topic="nature">
+          <div class="science-icon">🌿</div>
+          <h3>الطبيعة والنباتات</h3>
+          <p>تعرف على النباتات والأشجار</p>
+        </div>
+        <div class="science-card" data-topic="animals">
+          <div class="science-icon">🐾</div>
+          <h3>الحيوانات</h3>
+          <p>اكتشف عالم الحيوانات المثير</p>
+        </div>
+        <div class="science-card" data-topic="weather">
+          <div class="science-icon">🌤️</div>
+          <h3>الطقس والفصول</h3>
+          <p>تعلم عن حالات الطقس المختلفة</p>
+        </div>
+        <div class="science-card" data-topic="space">
+          <div class="science-icon">🌟</div>
+          <h3>الفضاء والنجوم</h3>
+          <p>استكشف عجائب الفضاء</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">4</div>
+          <div class="stat-label">سلاسل تعليمية</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">20</div>
+          <div class="stat-label">موضوع علمي</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100</div>
+          <div class="stat-label">نشاط تفاعلي</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Books Section -->
+    <section class="books-section">
+      <h2>الكتب والمذكرات المتاحة</h2>
+      <div class="books-grid">
+        <!-- سلاح التلميذ -->
+        <div class="book-card">
+          <div class="book-cover discover-cover">
+            <div class="book-title">سلاح التلميذ</div>
+            <div class="book-subtitle">اكتشف</div>
+            <div class="book-decoration">🔬</div>
+          </div>
+          <div class="book-info">
+            <h3>سلاح التلميذ في اكتشف</h3>
+            <p>رحلة ممتعة لاستكشاف العالم والعلوم للصف الأول الابتدائي</p>
+            <div class="book-features">
+              <span class="feature">تجارب علمية</span>
+              <span class="feature">أنشطة تفاعلية</span>
+              <span class="feature">صور ملونة</span>
+            </div> <a href="selah-tilmiz/index.html" class="btn btn-primary">
+              <span class="btn-text">عرض الكتاب</span>
+              <span class="btn-icon">👁️</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- الأضواء -->
+        <div class="book-card">
+          <div class="book-cover discover-cover">
+            <div class="book-title">الأضواء</div>
+            <div class="book-subtitle">اكتشف</div>
+            <div class="book-decoration">💡</div>
+          </div>
+          <div class="book-info">
+            <h3>الأضواء في اكتشف</h3>
+            <p>إضاءة العقول الصغيرة لاكتشاف عجائب العلوم والطبيعة</p>
+            <div class="book-features">
+              <span class="feature">شرح مبسط</span>
+              <span class="feature">رسوم توضيحية</span>
+              <span class="feature">أسئلة تفاعلية</span>
+            </div> <a href="alawaa/index.html" class="btn btn-primary">
+              <span class="btn-text">عرض الكتاب</span>
+              <span class="btn-icon">👁️</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- المعاصر -->
+        <div class="book-card">
+          <div class="book-cover discover-cover">
+            <div class="book-title">المعاصر</div>
+            <div class="book-subtitle">اكتشف</div>
+            <div class="book-decoration">⭐</div>
+          </div>
+          <div class="book-info">
+            <h3>المعاصر في اكتشف</h3>
+            <p>منهج حديث ومتطور لتعليم العلوم بطريقة عصرية وممتعة</p>
+            <div class="book-features">
+              <span class="feature">منهج حديث</span>
+              <span class="feature">تقنيات متطورة</span>
+              <span class="feature">تطبيقات عملية</span>
+            </div> <a href="moaser/index.html" class="btn btn-primary">
+              <span class="btn-text">عرض الكتاب</span>
+              <span class="btn-icon">👁️</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- كتاب الوزارة -->
+        <div class="book-card">
+          <div class="book-cover discover-cover">
+            <div class="book-title">كتاب الوزارة</div>
+            <div class="book-subtitle">اكتشف</div>
+            <div class="book-decoration">🏛️</div>
+          </div>
+          <div class="book-info">
+            <h3>كتاب الوزارة اكتشف</h3>
+            <p>المنهج الرسمي المعتمد من وزارة التربية والتعليم</p>
+            <div class="book-features">
+              <span class="feature">منهج معتمد</span>
+              <span class="feature">محتوى رسمي</span>
+              <span class="feature">مراجع موثقة</span>
+            </div> <a href="ministry/index.html" class="btn btn-primary">
+              <span class="btn-text">عرض الكتاب</span>
+              <span class="btn-icon">👁️</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Activities Section -->
+    <section class="activities-section">
+      <h2>أنشطة التعلم</h2>
+      <div class="activities-grid">
+        <div class="activity-card">
+          <div class="activity-icon">🧪</div>
+          <h3>التجارب العلمية</h3>
+          <p>تجارب بسيطة وآمنة يمكن تطبيقها في المنزل</p>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">🔍</div>
+          <h3>الملاحظة والاستكشاف</h3>
+          <p>تنمية مهارات الملاحظة والبحث العلمي</p>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">🌱</div>
+          <h3>زراعة النباتات</h3>
+          <p>تعلم كيفية زراعة النباتات ومراقبة نموها</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>روابط سريعة</h3>
+        <ul>
+          <li><a href="../../../index.html">الصفحة الرئيسية</a></li>
+          <li><a href="../../index.html">المرحلة الابتدائية</a></li>
+          <li><a href="../index.html">الصف الأول</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 جميع الحقوق محفوظة</p>
+    </div>
+  </footer>
+  <script src="../../../scripts.js"></script>
+  <script src="../../../performance.js"></script>
+</body>
+
+</html>
