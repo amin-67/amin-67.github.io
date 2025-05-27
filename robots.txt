@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-# يمكنك تعديل هذا الرابط بعد نشر الموقع على GitHub Pages
-Sitemap: https://username.github.io/almutamayyizun/sitemap.xml
